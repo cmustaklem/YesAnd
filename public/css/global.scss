@@ -1,0 +1,53 @@
+html, body{height:100%; margin:0;padding:0;font-family: 'Lato', sans-serif;}
+
+* { box-sizing: border-box; }
+
+#topMenu {
+    background-color: #3F51B5;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    span {
+        padding-left: 30px;
+        text-decoration: none;
+    }
+    span:hover {
+        text-decoration: underline !important
+    }
+}
+
+#subMenu {
+    background-color: #7986CB;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    span {
+        padding-left: 30px;
+        text-decoration: none;
+    }
+    span:hover {
+        text-decoration: underline !important
+    }
+}
+
+.topPadding {
+    padding-top: 20px;
+}
+
+h4 {
+    margin-top: 15px;
+}
+
+select {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar {
+    border-right: 1px solid gray;
+    height: 100vh;
+}

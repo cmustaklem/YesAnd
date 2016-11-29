@@ -21,4 +21,8 @@ Route.get('/', function * (request, response) {
   yield response.sendView('login')
 })
 
+Route.get('/home', function * (request, response) {
+  yield response.sendView('layoutmainscreen')
+})
+
 // Route.on('/').render('welcome')

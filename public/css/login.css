@@ -9,6 +9,49 @@ html, body {
   box-sizing: border-box;
 }
 
+.container-fluid {
+  height: 100%;
+  display: table;
+  width: 100%;
+  padding: 0;
+}
+
+.container {
+  height: 100%;
+  display: table;
+  width: 100%;
+  padding: 0;
+}
+
+.row-fluid {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.row {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.centering {
+  float: none;
+  margin: 0 auto;
+}
+
+form {
+  border: 1px solid grey;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.shadow {
+  -moz-box-shadow: 3px 3px 8px 3px lightgray;
+  -webkit-box-shadow: 3px 3px 8px 3px lightgray;
+  box-shadow: 3px 3px 8px 3px lightgray;
+}
+
 #topMenu {
   background-color: #3F51B5;
   color: white;
