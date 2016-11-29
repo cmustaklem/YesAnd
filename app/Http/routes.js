@@ -24,5 +24,11 @@ Route.get('/', function * (request, response) {
 Route.get('/home', function * (request, response) {
   yield response.sendView('layoutmainscreen')
 })
+Route.get('/directorview', function * (request, response) {
+  yield response.sendView('layoutmaindirectorscreen')
+})
+Route.get('/newgame', function * (request, response) {
+  yield response.sendView('newGame')
+})
 
 // Route.on('/').render('welcome')

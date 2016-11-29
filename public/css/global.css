@@ -1,7 +1,5 @@
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
   font-family: 'Lato', sans-serif;
 }
 
@@ -61,4 +59,20 @@ a {
 .sidebar {
   border-right: 1px solid gray;
   height: 100vh;
+}
+
+form {
+  border: 1px solid grey;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.shadow {
+  -moz-box-shadow: 3px 3px 8px 3px lightgray;
+  -webkit-box-shadow: 3px 3px 8px 3px lightgray;
+  box-shadow: 3px 3px 8px 3px lightgray;
+}
+
+#newGameForm {
+  margin-top: 30px;
 }
