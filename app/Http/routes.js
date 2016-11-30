@@ -36,5 +36,14 @@ Route.get('/signup', function * (request, response) {
 Route.get('/newuser', function * (request, response) {
   yield response.sendView('newUser')
 })
+Route.get('/showlist', function * (request, response) {
+  yield response.sendView('showlist')
+})
+Route.get('/gamelist', function * (request, response) {
+  yield response.sendView('gameList')
+})
+Route.get('/newshow', function * (request, response) {
+  yield response.sendView('newShow')
+})
 
 // Route.on('/').render('welcome')

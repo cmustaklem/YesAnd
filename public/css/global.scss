@@ -33,6 +33,7 @@ html, body{height:100%; font-family: 'Lato', sans-serif;}
     color: white;
     display: inline-block;
     font-size: 15px;
+    text-decoration: none;
     span {
         padding-left: 30px;
         text-decoration: none;
@@ -82,4 +83,15 @@ form {
   // margin:0 auto;
   // vertical-align: middle;
   // float: none;
+}
+
+#gameDropDownMenu {
+    margin-top: 29.25px;
+}
+
+#showList {
+    margin-top: 26px;
+}
+#gameDescription {
+    margin-top: 3px;
 }
