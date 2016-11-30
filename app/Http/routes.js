@@ -30,5 +30,11 @@ Route.get('/directorview', function * (request, response) {
 Route.get('/newgame', function * (request, response) {
   yield response.sendView('newGame')
 })
+Route.get('/signup', function * (request, response) {
+  yield response.sendView('signup')
+})
+Route.get('/newuser', function * (request, response) {
+  yield response.sendView('newUser')
+})
 
 // Route.on('/').render('welcome')

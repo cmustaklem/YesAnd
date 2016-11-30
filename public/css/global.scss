@@ -7,9 +7,19 @@ html, body{height:100%; font-family: 'Lato', sans-serif;}
     color: white;
     display: inline-block;
     font-size: 20px;
+    height: 10vh;
+    padding: 10px;
+    width: 100vw;
+    img {
+      border-radius: 50%;
+      height: 7vh;
+      margin-bottom: 10px;
+      float: right !important;
+    }
     span {
-        padding-left: 30px;
+        font-size: 5vh;
         text-decoration: none;
+        margin-left: 5vw;
     }
     span:hover {
         text-decoration: underline !important
@@ -17,6 +27,8 @@ html, body{height:100%; font-family: 'Lato', sans-serif;}
 }
 
 #subMenu {
+    padding-left: 4.7vw;
+    margin-top: -10px;
     background-color: #7986CB;
     color: white;
     display: inline-block;

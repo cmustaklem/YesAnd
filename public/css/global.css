@@ -12,11 +12,22 @@ html, body {
   color: white;
   display: inline-block;
   font-size: 20px;
+  height: 10vh;
+  padding: 10px;
+  width: 100vw;
+}
+
+#topMenu img {
+  border-radius: 50%;
+  height: 7vh;
+  margin-bottom: 10px;
+  float: right !important;
 }
 
 #topMenu span {
-  padding-left: 30px;
+  font-size: 5vh;
   text-decoration: none;
+  margin-left: 5vw;
 }
 
 #topMenu span:hover {
@@ -24,6 +35,8 @@ html, body {
 }
 
 #subMenu {
+  padding-left: 4.7vw;
+  margin-top: -10px;
   background-color: #7986CB;
   color: white;
   display: inline-block;

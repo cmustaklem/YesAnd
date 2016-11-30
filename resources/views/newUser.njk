@@ -1,0 +1,41 @@
+{% extends 'layout' %}
+
+{% block content %}
+{# {% include 'nav' %} #}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 span3 centering text-center">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Welcome to YesAnd...</h4>
+                </div>
+            </div>
+            <form class="shadow" id="signUp">
+                <div class="form-group text-left">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Andy">
+                </div>
+                <div class="form-group text-left">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Kaufman">
+                </div>
+                <div class="form-group text-left">
+                    <label for="exampleInputPassword1">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumberLogin" placeholder="317-555-1234">
+                </div>
+                <div class="form-group text-left">
+                    <label for="emailAddress">Email address/Username</label>
+                    <input type="email" class="form-control" id="emailAddressLogin" placeholder="funny.person@fakemail.com">
+                </div>
+                <div class="form-group text-left">
+                    <label for="passwordLogin">Password</label>
+                    <input type="password" class="form-control" id="passwordLogin" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default" id="signUpButton">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="/js/login.bundle.js"></script>
+{% endblock %}
