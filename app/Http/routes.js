@@ -17,6 +17,16 @@
 
 const Route = use('Route')
 
+Route.group('v1', function () {
+  Route.resource('/users', 'UserController')
+  Route.resource('/games', 'GameController')
+  Route.resource('/shows', 'ShowController')
+  Route.resource('/sounds', 'SoundController')
+  Route.resource('/teams', 'TeamController')
+  Route.resource('/show_game', 'ShowGameController')
+  Route.resource('/show_user', 'ShowUserController')
+}).prefix('/api/v1')
+
 Route.get('/', function * (request, response) {
   yield response.sendView('login')
 })
@@ -44,6 +54,9 @@ Route.get('/gamelist', function * (request, response) {
 })
 Route.get('/newshow', function * (request, response) {
   yield response.sendView('newShow')
+})
+Route.get('/newshow2', function * (request, response) {
+  yield response.sendView('newShow2')
 })
 
 // Route.on('/').render('welcome')

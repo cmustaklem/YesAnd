@@ -20,20 +20,21 @@
     "adonis-framework": "^3.0.5",
     "adonis-lucid": "^3.0.10",
     "adonis-middleware": "^1.0.8",
-    "standard": "^8.4.0",
-    "youch": "^1.0.1",
     "babel": "^6.5.2",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.16.0",
     "babel-loader": "^6.2.5",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.11.1",
+    "pg": "^6.1.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-localstorage": "^0.3.0",
     "react-mixin": "^3.0.5",
+    "standard": "^8.4.0",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "youch": "^1.0.1"
   },
   "standard": {
     "global": [
