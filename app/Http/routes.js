@@ -58,5 +58,20 @@ Route.get('/newshow', function * (request, response) {
 Route.get('/newshow2', function * (request, response) {
   yield response.sendView('newShow2')
 })
+Route.get('/sounds', function * (request, response) {
+  yield response.sendView('sounds')
+})
+Route.get('/existingsounds', function * (request, response) {
+  yield response.sendView('existingsounds')
+})
+Route.get('/showofshows', function * (request, response) {
+  yield response.sendView('shows')
+})
+Route.get('/playeredit', function * (request, response) {
+  yield response.sendView('editPlayer')
+})
+Route.get('/directorplayeredit', function * (request, response) {
+  yield response.sendView('directorplayerview')
+})
 
 // Route.on('/').render('welcome')

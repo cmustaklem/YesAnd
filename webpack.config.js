@@ -1,6 +1,11 @@
 module.exports = {
   entry: {
     login: './public/js/login.js',
+    gameAdd: './public/js/gameAdd.js',
+    newGame: './public/js/newGame.js',
+    newUser: '.public/js/newUser.js',
+    newTeam: '.public/js/newTeam.js',
+    newSound: '.public/js/newSound.js',
   },
   output: {
     path: './public/js/',

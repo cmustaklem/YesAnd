@@ -2,6 +2,16 @@
 
 
 {% block content %}
+
+{{ form.open({action: 'GameController.store'})}}
+
+<main>
+    <div class="container">
+        <div id="newgame">
+
+        </div>
+    </div>
+</main>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
@@ -17,11 +27,11 @@
             <form>
                 <input type="text" id="gameName" class="form-control" placeholder="Game Name"><br>
                 <textarea id="gameDescription" class="form-control" rows="3" placeholder="Game Description"></textarea><br>
-                <button type="submit" id="idSubmit" class="btn btn-default">Submit</button>
+                <input type="text" id="gameSuggestion" class="form-control" placeholder="Game Suggestion"><br>
+                <button type="button" id="gameSubmit" class="btn btn-default">Submit</button>
             </form>
         </div>
     </div>
 </div>
-</main>
-<script type="text/javascript" src="/js/login.bundle.js"></script>
+<script type="text/javascript" src="/js/newGame.js"></script>
 {% endblock %}

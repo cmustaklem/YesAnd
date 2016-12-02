@@ -1,4 +1,4 @@
-{% extends 'layout' %}
+{% extends 'layoutmainscreen' %}
 
 {% block content %}
 
@@ -8,35 +8,26 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 span3 centering text-center">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>Welcome to YesAnd...</h4>
-                </div>
-            </div>
             <form class="shadow" id="signUp">
                 <div class="form-group text-left" id="userFirstName">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Andy">
+                    <input type="text" class="form-control" id="firstName" value="{user.first_name}">
                 </div>
                 <div class="form-group text-left" id="userLastName">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Kaufman">
+                    <input type="text" class="form-control" id="lastName" value="{user.first_name}">
                 </div>
                 <div class="form-group text-left" id="userPhoneNumber">
                     <label for="phoneNumberLogin">Phone Number</label>
-                    <input type="text" class="form-control" id="phoneNumberLogin" placeholder="317-555-1234">
+                    <input type="text" class="form-control" id="phoneNumberLogin" value="{user.first_name}">
                 </div>
                 <div class="form-group text-left" id="userEmailAddress">
                     <label for="emailAddressLogin">Email address/Username</label>
-                    <input type="email" class="form-control" id="emailAddressLogin" placeholder="funny.person@fakemail.com">
+                    <input type="email" class="form-control" id="emailAddressLogin" value="{user.first_name}">
                 </div>
                 <div class="form-group text-left" id="userPassword">
                     <label for="passwordLogin">Password</label>
-                    <input type="password" class="form-control" id="passwordLogin" placeholder="Password">
-                </div>
-                <div class="form-group text-left" id="userPhoto">
-                    <label for="profilePic">Upload your Photo</label>
-                    <input type="file" id="profilePic">
+                    <input type="text" class="form-control" id="passwordLogin" value="{user.password}">
                 </div>
                 <button type="button" class="btn btn-default" id="signUpUserButton">Submit</button>
             </form>

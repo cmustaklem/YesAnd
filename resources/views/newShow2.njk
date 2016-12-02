@@ -4,13 +4,15 @@
 {% block content %}
 <main><br>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
+    <div id="gameAdd">
+    </div>
+    {# <div class="row"> #}
+      {# <div class="col-lg-3">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5>Something new</h5>
           </div>
-          <form class="" action="index.html" method="post">
+          <form class="shadow" action="index.html" method="post" id="newGameTable">
             <div class="panel-body">
                 <select class="form-control" id="gameListing">
                   <option>1</option>
@@ -30,16 +32,23 @@
                 <label class="checkbox">
                   <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
                 </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 4
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 5
+                </label>
               </div>
+              <button value={this.state.newTodo} className="btn-block" onClick={this.click} onChange={this.typing} type="button" id="addGame">Add to my list</button>
             </div>
           </form>
         </div>
-      </div>
-    </div>
+      </div> #}
+    {# </div> #}
 
   </div>
-</div>
-</div>
+{# </div>
+</div> #}
 </main>
-<script type="text/javascript" src="/js/login.bundle.js"></script>
+<script type="text/javascript" src="/js/gameAdd.bundle.js"></script>
 {% endblock %}

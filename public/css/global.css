@@ -87,6 +87,14 @@ form {
   box-shadow: 3px 3px 8px 3px lightgray;
 }
 
+.panel-body {
+  border-radius: 5px;
+}
+
+.toplinks a {
+  color: white;
+}
+
 #newGameForm {
   margin-top: 30px;
 }
@@ -105,4 +113,16 @@ form {
 
 #castListing {
   margin-left: 21px;
+}
+
+#newGameTable {
+  margin-top: 29.25px;
+}
+
+#newSoundForm {
+  margin-top: 29.25px;
+}
+
+#soundList {
+  margin-top: 29.25px;
 }
