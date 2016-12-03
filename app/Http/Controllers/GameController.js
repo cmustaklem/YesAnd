@@ -1,5 +1,6 @@
 'use strict'
 
+const Helpers = use('Helpers')
 const Game = use('App/Model/Game')
 
 class GameController {
@@ -18,6 +19,7 @@ class GameController {
     game.name = request.input('name')
     game.description = request.input('description')
     game.suggestion = request.input('suggestion')
+    game.team_id = request.input('team_id')
     yield game.save()
     response.json(true)
   }

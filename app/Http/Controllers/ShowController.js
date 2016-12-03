@@ -17,6 +17,7 @@ class ShowController {
     let show = new Show()
     show.date = request.input('date')
     show.location = request.input('location')
+    show.team_id = request.input('team_id')
     yield show.save()
     response.json(true)
   }

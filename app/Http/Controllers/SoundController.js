@@ -17,6 +17,7 @@ class SoundController {
     let sound = new Sound()
     sound.sound_file = request.input('sound_file')
     sound.game_id = request.input('game_id')
+    sound.team_id = request.input('team_id')
     yield sound.save()
     response.json(true)
   }
@@ -35,6 +36,26 @@ class SoundController {
 
   * destroy(request, response) {
     //
+  }
+
+  * updateSound(request, response) {
+    const sound_file = request.file('avatar', {
+        maxSize: '2mb',
+        allowedExtensions: ['jpg', 'png', 'jpeg']
+    })
+
+    const sound_id = request.param('id')
+    const sound = yield Sound.findOrFail(sound_id)
+    sound.sound_file = sound_file.
+
+  //   yield avatar.move(Helpers.storagePath(), fileName)
+  //   if (!avatar.moved()) {
+  //     response.badRequest(avatar.errors())
+  //     return
+  //   }
+  //   user.avatar = avatar.uploadPath()
+  //   yield user.save()
+  //   response.ok('Avatar updated successfully')
   }
 
 }

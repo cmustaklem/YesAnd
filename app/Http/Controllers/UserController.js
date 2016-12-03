@@ -19,11 +19,12 @@ class UserController {
     user.last_name = request.input('last_name')
     user.email = request.input('email')
     user.password = request.input('password')
-    user.director = request.input('director')
+    user.phone_number = request.input('phone_number')
     user.team_id = request.input('team_id')
-    user.picture = request.input('picture')
+    user.director = true
+    // user.picture = request.input('picture')
     yield user.save()
-    response.json(true)
+    response.json(user)
   }
 
   * show(request, response) {

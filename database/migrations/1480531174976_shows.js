@@ -9,6 +9,7 @@ class ShowsTableSchema extends Schema {
       table.increments()
       table.string('date')
       table.string('location')
+      table.integer('team_id').unsigned()
       table.timestamps()
     })
   }

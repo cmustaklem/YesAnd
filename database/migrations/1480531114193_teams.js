@@ -10,7 +10,6 @@ class TeamsTableSchema extends Schema {
       table.string('name')
       table.string('city')
       table.string('state')
-      table.string('phone')
       table.string('website')
       table.timestamps()
     })

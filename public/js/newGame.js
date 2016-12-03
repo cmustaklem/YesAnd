@@ -33,8 +33,8 @@ function postGameInfo() {
         },
         body: JSON.stringify({
             name: gameName.value,
-            description: gameDescription,
-            suggestion: gameSuggestion
+            description: gameDescription.value,
+            suggestion: gameSuggestion.value
         })
     })
 }

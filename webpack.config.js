@@ -6,6 +6,7 @@ module.exports = {
     newUser: '.public/js/newUser.js',
     newTeam: '.public/js/newTeam.js',
     newSound: '.public/js/newSound.js',
+    playerInvite: '.public/js/playerInvite.js',
   },
   output: {
     path: './public/js/',

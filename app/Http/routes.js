@@ -73,5 +73,16 @@ Route.get('/playeredit', function * (request, response) {
 Route.get('/directorplayeredit', function * (request, response) {
   yield response.sendView('directorplayerview')
 })
+Route.get('/playerInvite', function * (request, response) {
+  yield response.sendView('playerinvite')
+})
+Route.get('/forgotpassword', function * (request, response) {
+  yield response.sendView('forgotPassword')
+})
+Route.get('/newpassword', function * (request, response) {
+  yield response.sendView('newPassword')
+})
+
+Route.put('/sounds/:id', 'SoundController.updateSound')
 
 // Route.on('/').render('welcome')

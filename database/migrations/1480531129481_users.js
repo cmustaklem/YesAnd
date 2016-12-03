@@ -10,6 +10,7 @@ class UsersTableSchema extends Schema {
       table.string('first_name')
       table.string('last_name')
       table.string('email').unique()
+      table.string('phone_number')
       table.string('password')
       table.boolean('director')
       table.integer('team_id').unsigned()

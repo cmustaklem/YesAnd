@@ -20,3 +20,5 @@ function postNewUserInfo() {
         })
     })
 }
+
+//must form data. I cannot upload formdata for uploading instead of stringify. stringify does not work for sound or image files. 

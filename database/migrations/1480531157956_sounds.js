@@ -7,8 +7,9 @@ class SoundsTableSchema extends Schema {
   up () {
     this.create('sounds', (table) => {
       table.increments()
-      table.string('sound_file')
+      table.binary('sound_file')
       table.integer('game_id').unsigned()
+      table.integer('team_id').unsigned()
       table.timestamps()
     })
   }

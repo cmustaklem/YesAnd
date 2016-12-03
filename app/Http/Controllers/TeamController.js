@@ -18,11 +18,9 @@ class TeamController {
     team.name = request.input('name')
     team.city = request.input('city')
     team.state = request.input('state')
-    team.phone = request.input('phone')
     team.website = request.input('website')
-    team.logo = request.input('logo')
     yield team.save()
-    response.json(true)
+    response.json(team)
   }
 
   * show(request, response) {

@@ -10,6 +10,7 @@ class GamesTableSchema extends Schema {
       table.string('name')
       table.text('description')
       table.text('suggestion')
+      table.integer('team_id').unsigned()
       table.timestamps()
     })
   }
