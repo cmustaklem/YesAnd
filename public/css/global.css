@@ -95,6 +95,10 @@ form {
   color: white;
 }
 
+.addNewPlayerRow {
+  width: 80%;
+}
+
 #newGameForm {
   margin-top: 30px;
 }
@@ -133,4 +137,12 @@ form {
 
 #pushUploadDown {
   margin-bottom: 10px;
+}
+
+#more_fields {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 5px;
+  margin-top: -40px;
 }

@@ -46,44 +46,44 @@
 
 	'use strict';
 
-	// import React from 'react'
-	// import ReactDOM from 'react-dom'
-	// import newGame from '../components/NewGame'
-	// //we are using ReactDOM because the values within this global js file will be consistently updated and placed onto the HTML file. It is rendering the Todos component. It is rendering within the #todoApp div.
-	//
-	// function renderView() {
-	//    ReactDOM.render(
-	//        <newGame />,
-	//        document.getElementById('newgame')
-	//    )
-	// }
-	//
-	// renderView()
+	document.getElementById('submitSoundFile').addEventListener('click', function () {
 
-
-	document.getElementById('gameSubmit').addEventListener('click', function () {
-
-	    postGameInfo();
+	    postNewSound();
 	});
 
-	function postGameInfo() {
-	    var gameName = document.getElementById('gameName');
-	    var gameDescription = document.getElementById('gameDescription');
-	    var gameSuggestion = document.getElementById('gameSuggestion');
-	    console.log(gameName.value);
+	function postNewSound() {
+	    var gameId = document.getElementById('soundEffectGameList');
+	    var soundfile = document.getElementById('gameSoundfile');
+	    console.log(gameId, gameId.options, gameId.selectedIndex, gameId.options[gameId.selectedIndex].value);
+	    console.log(soundfile.files);
 
-	    fetch('api/v1/games', {
+	    var formData = new FormData();
+	    formData.append('game_id', gameId.options[gameId.selectedIndex].value);
+	    formData.append('sound_file', soundfile.files[0]);
+
+	    fetch('/api/v1/sounds', {
 	        method: 'post',
-	        headers: {
-	            'Content-Type': 'application/json'
-	        },
-	        body: JSON.stringify({
-	            name: gameName.value,
-	            description: gameDescription.value,
-	            suggestion: gameSuggestion.value
-	        })
+	        body: formData
 	    });
 	}
+
+	// document.getElementById('playSound') {
+	//     playNewSound()
+	// }
+
+
+	// fetch('api/v1/sounds', {
+	//     method: 'GET',
+	// })
+	// .then(function(response) {
+	//     return response.json()
+	// })
+	// .then(function(response) {
+	//     console.log(response)
+	// })
+
+
+	//must form data. I cannot upload formdata for uploading instead of stringify. stringify does not work for sound or image files.
 
 /***/ }
 /******/ ]);

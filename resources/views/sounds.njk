@@ -9,25 +9,25 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <select class="form-control" id="soundEffectGameList">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select><br>
+                {# <select class="form-control" id="soundEffectGameList">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br> #}
             </div>
             <div class="col-sm-6" id="existingSoundBoard">
                 <ul class="list-unstyled">
-                    <li><audio controls><source src="/assets/Slap.mp3" type="audio/mpeg"></audio></li>
-                    <li><audio controls><source src="/assets/Slap.mp3" type="audio/mpeg"></audio></li>
-                    <li><audio controls><source src="/assets/Slap.mp3" type="audio/mpeg"></audio></li>
+                    <li><audio controls><source src="/api/v1/sounds/11" type="audio/mpeg"></audio></li>
+                    {# <li><audio controls><source src="/assets/Slap.mp3" type="audio/mpeg"></audio></li>
+                    <li><audio controls><source src="/assets/Slap.mp3" type="audio/mpeg"></audio></li> #}
                 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-                <p class="text-center"><h4>Add Song</h4></p>
+                <p class="text-center"><h4>Add Sound Effect</h4></p>
             </div>
         </div>
         <div class="row">
@@ -35,21 +35,26 @@
                 <div class="col-sm-6">
                     <strong>Which Game</strong>
                     <select class="form-control" id="soundEffectGameList">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputFile" id="pushUploadDown">Upload Here!</label><br>
-                        <input type="file" id="gameSoundfile">
-                        <button type="submit" class="btn btn-default" id="submitSoundFile">Submit</button>
+                        <input type="file" id="gameSoundfile" class="form-control">
+                        <button type="button" class="btn btn-default" id="submitSoundFile">Submit</button>
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="playSound">
+
+            </div>
         </div>
     </div>
 

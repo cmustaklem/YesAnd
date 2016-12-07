@@ -17,7 +17,16 @@
 
 const Route = use('Route')
 
+// Route.get('/', 'ListController.show')
+
+// Route.get('/login', 'AuthController.index')
+// Route.post('/login', 'AuthController.login')
+//
+// Route.get('/signup', 'RegisterController.index')
+// Route.post('signup', 'RegisterController.doRegister')
+
 Route.group('v1', function () {
+  Route.post('/auth', 'AuthController.login')
   Route.resource('/users', 'UserController')
   Route.resource('/games', 'GameController')
   Route.resource('/shows', 'ShowController')
@@ -25,6 +34,7 @@ Route.group('v1', function () {
   Route.resource('/teams', 'TeamController')
   Route.resource('/show_game', 'ShowGameController')
   Route.resource('/show_user', 'ShowUserController')
+  Route.post('/invite', 'UserController.invite')
 }).prefix('/api/v1')
 
 Route.get('/', function * (request, response) {
@@ -32,7 +42,7 @@ Route.get('/', function * (request, response) {
 })
 
 Route.get('/home', function * (request, response) {
-  yield response.sendView('layoutmainscreen')
+  yield response.sendView('layoutmaindirectorscreen')
 })
 Route.get('/directorview', function * (request, response) {
   yield response.sendView('layoutmaindirectorscreen')
@@ -40,9 +50,9 @@ Route.get('/directorview', function * (request, response) {
 Route.get('/newgame', function * (request, response) {
   yield response.sendView('newGame')
 })
-Route.get('/signup', function * (request, response) {
-  yield response.sendView('signup')
-})
+// Route.get('/signup', function * (request, response) {
+//   yield response.sendView('signup')
+// })
 Route.get('/newuser', function * (request, response) {
   yield response.sendView('newUser')
 })
@@ -71,7 +81,7 @@ Route.get('/playeredit', function * (request, response) {
   yield response.sendView('editPlayer')
 })
 Route.get('/directorplayeredit', function * (request, response) {
-  yield response.sendView('directorplayerview')
+  yield response.sendView('directorPlayerEditView')
 })
 Route.get('/playerInvite', function * (request, response) {
   yield response.sendView('playerinvite')
@@ -82,7 +92,21 @@ Route.get('/forgotpassword', function * (request, response) {
 Route.get('/newpassword', function * (request, response) {
   yield response.sendView('newPassword')
 })
+Route.get('/activeshow', function * (request, response) {
+  yield response.sendView('activeShow')
+})
+Route.get('/playeredit', function * (request, response) {
+  yield response.sendView('playerEditView')
+})
+Route.get('/directorhome', function * (request, response) {
+  yield response.sendView('directorhome')
+})
+Route.get('/playerhome', function * (request, response) {
+  yield response.sendView('playerhome')
+})
+Route.get('/addnewplayer', function * (request, response) {
+  yield response.sendView('addNewPlayer')
+})
 
 Route.put('/sounds/:id', 'SoundController.updateSound')
-
-// Route.on('/').render('welcome')
+Route.post('/users', 'UsersController.store')

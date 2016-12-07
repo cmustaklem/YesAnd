@@ -1,24 +1,40 @@
-document.getElementById('signUpTeamButton').addEventListener('click', function() {
+document.getElementById('submitSoundFile').addEventListener('click', function() {
 
-    postNewUserInfo()
+    postNewSound()
 })
 
 
-function postNewUserInfo() {
-    var soundfile = document.getElementById('teamName')
+function postNewSound() {
+    var gameId = document.getElementById('soundEffectGameList')
+    var soundfile = document.getElementById('gameSoundfile')
+    console.log(gameId, gameId.options, gameId.selectedIndex, gameId.options[gameId.selectedIndex].value)
+    console.log(soundfile.files)
 
+    var formData = new FormData()
+    formData.append('game_id', gameId.options[gameId.selectedIndex].value)
+    formData.append('sound_file', soundfile.files[0])
 
-    fetch('api/v1/teams', {
+    fetch('/api/v1/sounds', {
         method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            teamname: teamname.value,
-            city: city.value,
-            state: state.value
-        })
+        body: formData
     })
 }
 
-//must form data. I cannot upload formdata for uploading instead of stringify. stringify does not work for sound or image files. 
+// document.getElementById('playSound') {
+//     playNewSound()
+// }
+
+
+    // fetch('api/v1/sounds', {
+    //     method: 'GET',
+    // })
+    // .then(function(response) {
+    //     return response.json()
+    // })
+    // .then(function(response) {
+    //     console.log(response)
+    // })
+
+
+
+//must form data. I cannot upload formdata for uploading instead of stringify. stringify does not work for sound or image files.

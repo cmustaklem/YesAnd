@@ -1,0 +1,15 @@
+{% extends 'layoutmaindirectorscreen' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 text-center">
+            <h1>Welcome {{user.first_name}}</h1>
+            <p><a href="/directorplayeredit">Click here to view and/or edit any user account!</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -50,23 +50,35 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _AddNewPlayers = __webpack_require__(32);
+
+	var _AddNewPlayers2 = _interopRequireDefault(_AddNewPlayers);
+
 	var _reactDom = __webpack_require__(33);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _NewShow = __webpack_require__(179);
-
-	var _NewShow2 = _interopRequireDefault(_NewShow);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// import Todos from '../components/Todos'
 	//we are using ReactDOM because the values within this global js file will be consistently updated and placed onto the HTML file. It is rendering the Todos component. It is rendering within the #todoApp div.
 
 	function renderView() {
-	    _reactDom2.default.render(_react2.default.createElement(_NewShow2.default, null), document.getElementById('gameAdd'));
+	    _reactDom2.default.render(_react2.default.createElement(_AddNewPlayers2.default, null), document.getElementById('addNewProspects'));
 	}
 
 	renderView();
+
+	// var player = 1;
+	// var value
+	// function add_fields() {
+	//     player++;
+	//     var addToList = document.getElementById('addPlayers')
+	//     var addingplayerline = document.createElement("div");
+	//     addingplayerline.innerHTML = '<div class="form-group"> Add Player ' + player +':</div><div class="content addNewPlayerRow"><span><input type="email" class="addNewPlayerRow" name="newplayeremailaddress" placeholder="newplayer@funnymail.com" value="" /></span></div>';
+	//
+	//     addToList.appendChild(addingplayerline)
+	// }
 
 /***/ },
 /* 1 */
@@ -4115,7 +4127,169 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 32 */,
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AddNewPlayers = function (_React$Component) {
+	  _inherits(AddNewPlayers, _React$Component);
+
+	  function AddNewPlayers(props) {
+	    _classCallCheck(this, AddNewPlayers);
+
+	    var _this = _possibleConstructorReturn(this, (AddNewPlayers.__proto__ || Object.getPrototypeOf(AddNewPlayers)).call(this, props));
+
+	    _this.state = { prospect: '' };
+	    _this.sendInvite = _this.sendInvite.bind(_this);
+	    _this.handleChange = _this.handleChange.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(AddNewPlayers, [{
+	    key: 'handleChange',
+	    value: function handleChange(event) {
+	      this.setState({ prospect: event.target.value });
+	    }
+	  }, {
+	    key: 'sendInvite',
+	    value: function sendInvite(e) {
+	      var _this2 = this;
+
+	      fetch('/api/v1/invite', {
+	        body: JSON.stringify({
+	          email: this.state.prospect
+	        }),
+	        credentials: 'same-origin',
+	        method: 'POST',
+	        headers: {
+	          'Content-Type': 'application/json'
+	        }
+	      }).then(function (response) {
+	        return response.json();
+	      }).then(function (response) {
+	        console.log(response);
+	        alert('We have sent an invite to ' + _this2.state.prospect);
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-sm-8 col-sm-offset-2 addNewPlayerRow' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Email Address:',
+	            _react2.default.createElement('input', { type: 'text', value: this.state.prospect, onChange: this.handleChange })
+	          ),
+	          _react2.default.createElement('input', { type: 'button', value: 'Send Invite', className: 'btn btn-success', onClick: this.sendInvite })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return AddNewPlayers;
+	}(_react2.default.Component);
+
+	exports.default = AddNewPlayers;
+
+	// import React, { Component } from 'react'
+	// //I am using class to define this component.
+	// class AddNewPlayers extends Component {
+	//     constructor(props) {
+	//         super(props)
+	//         this.typing = this.typing.bind(this)
+	//         this.enter = this.enter.bind(this)
+	//         this.click = this.click.bind(this)
+	//         this.state = {
+	//             newPlayer: '',
+	//             players: []
+	//         } //this sets it so there is no data loaded in when opening the page. I added a value within the newPlayer string and it gave the input field a default value
+	//     }
+	//     typing(e) {
+	//         this.setState({
+	//             newPlayer: e.target.value
+	//         })
+	//     }
+	//     enter(e) {
+	//         if (e.key === 'Enter' && e.target.value !== '') {
+	//             let newPlayers = this.state.player
+	//
+	//             newPlayers.push({
+	//                 text: e.target.value
+	//             })
+	//             this.setState({
+	//                 newPlayer: '',
+	//                 players: newPlayers
+	//             })
+	//         }
+	//     }
+	//     click(e) {
+	//         if (e.target.value !== '') {
+	//             let newPlayers = this.state.player
+	//
+	//             newPlayers.push({
+	//                 text: e.target.value
+	//             })
+	//
+	//             this.setState({
+	//                 newPlayer: '',
+	//                 players: newPlayers
+	//             })
+	//     }}
+	//
+	//     render() {  var player = 1;
+	//      var value
+	//      function add_fields() {
+	//          player++;
+	//          var addToList = document.getElementById('addPlayers')
+	//          var addingplayerline = document.createElement("div");
+	//          addingplayerline.innerHTML = '<div class="form-group"> Add Player ' + player +':</div><div class="content addNewPlayerRow"><span><input type="email" class="addNewPlayerRow" name="newplayeremailaddress" placeholder="newplayer@funnymail.com" value="" /></span></div>';
+	//
+	//     addToList.appendChild(addingplayerline)
+	//         return <div className="row">
+	//             <div className ="col-sm-8 col-sm-offset-2">
+	//                 <div class="form-group"> Add Player ' + player +':</div><div class="content addNewPlayerRow"><span><input type="email" class="addNewPlayerRow" name="newplayeremailaddress" placeholder="newplayer@funnymail.com" value="" /></span></div>
+	//                 <button type="button" className="btn btn-default" id="sendNewUserEmail" action>Submit</button>
+	//             </div>
+	//         {/* <div className="col-sm-6">
+	//             <input type="text" className="form-control" value={this.state.newPlayer} onChange={this.typing} onKeyPress={this.enter}  />
+	//                 <div className="text-center button">
+	//                 <button value={this.state.newPlayer} className="btn btn-success" onClick={this.click} onChange={this.typing} type="button" id="addBtn">Add to my list</button>
+	//                 </div>
+	//             </div>
+	//             <ul className="col-sm-6">
+	//             {TodoItems}
+	//             </ul>
+	//             </div> */}
+	//         }}
+	//
+	// export default AddNewPlayers
+
+/***/ },
 /* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -21475,132 +21649,6 @@
 
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
-
-/***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var NewShow2 = function (_React$Component) {
-	  _inherits(NewShow2, _React$Component);
-
-	  function NewShow2(props) {
-	    _classCallCheck(this, NewShow2);
-
-	    var _this = _possibleConstructorReturn(this, (NewShow2.__proto__ || Object.getPrototypeOf(NewShow2)).call(this, props));
-
-	    _this.handleChange = _this.handleChange.bind(_this);
-	    _this.addGame = _this.addGame.bind(_this);
-	    _this.state = { items: [], text: '' };
-	    return _this;
-	  }
-
-	  _createClass(NewShow2, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'col-sm-3' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            'Add Cast and Games'
-	          ),
-	          _react2.default.createElement(
-	            'form',
-	            { onSubmit: this.addGame },
-	            _react2.default.createElement('input', { onChange: this.handleChange, value: this.state.text }),
-	            _react2.default.createElement(
-	              'button',
-	              { className: 'btn-primary' },
-	              'Add Game and Cast'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'col-sm-6 text-left', id: 'newGameTable' },
-	          _react2.default.createElement(TodoList, { items: this.state.items })
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'handleChange',
-	    value: function handleChange(e) {
-	      this.setState({ text: e.target.value });
-	    }
-	  }, {
-	    key: 'addGame',
-	    value: function addGame(e) {
-	      e.preventDefault();
-	      var newItem = {
-	        text: this.state.text,
-	        id: Date.now()
-	      };
-	      this.setState(function (prevState) {
-	        return {
-	          items: prevState.items.concat(newItem),
-	          text: ''
-	        };
-	      });
-	    }
-	  }]);
-
-	  return NewShow2;
-	}(_react2.default.Component);
-
-	var TodoList = function (_React$Component2) {
-	  _inherits(TodoList, _React$Component2);
-
-	  function TodoList() {
-	    _classCallCheck(this, TodoList);
-
-	    return _possibleConstructorReturn(this, (TodoList.__proto__ || Object.getPrototypeOf(TodoList)).apply(this, arguments));
-	  }
-
-	  _createClass(TodoList, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'ul',
-	        null,
-	        this.props.items.map(function (item) {
-	          return _react2.default.createElement(
-	            'li',
-	            { key: item.id },
-	            item.text
-	          );
-	        })
-	      );
-	    }
-	  }]);
-
-	  return TodoList;
-	}(_react2.default.Component);
-
-	exports.default = NewShow2;
 
 /***/ }
 /******/ ]);
