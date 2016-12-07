@@ -20,6 +20,7 @@ const Route = use('Route')
 //API routes
 Route.group('v1', function () {
   Route.post('/auth', 'AuthController.login')
+  Route.get('/auth/logout', 'AuthController.logout')
   Route.resource('/users', 'UserController')
   Route.resource('/games', 'GameController')
   Route.resource('/shows', 'ShowController')
@@ -48,6 +49,10 @@ Route.get('/newpassword', function * (request, response) {
   yield response.sendView('newPassword')
 })
 
+Route.get('/newuser', function * (request, response) {
+  yield response.sendView('newUser')
+})
+
 
 //Authenticated routes
 Route.group('authenticated', function() {
@@ -63,9 +68,7 @@ Route.group('authenticated', function() {
   Route.get('/newgame', function * (request, response) {
     yield response.sendView('newGame')
   })
-  Route.get('/newuser', function * (request, response) {
-    yield response.sendView('newUser')
-  })
+
   Route.get('/showlist', function * (request, response) {
     yield response.sendView('showlist')
   })

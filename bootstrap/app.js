@@ -29,7 +29,8 @@ const providers = [
   'adonis-lucid/providers/FactoryProvider',
   'adonis-middleware/providers/AppMiddlewareProvider',
   'adonis-auth/providers/AuthManagerProvider',
-  'adonis-mail-provider/providers/MailProvider'
+  'adonis-mail-provider/providers/MailProvider',
+  'adonis-framework/providers/EncryptionProvider'
 ]
 
 /*
@@ -76,7 +77,8 @@ const aliases = {
   Route: 'Adonis/Src/Route',
   Schema: 'Adonis/Src/Schema',
   View: 'Adonis/Src/View',
-  Mail: 'Adonis/Addons/Mail'
+  Mail: 'Adonis/Addons/Mail',
+  Encryption: 'Adonis/Src/Encryption'
 }
 
 /*

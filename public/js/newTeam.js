@@ -45,7 +45,8 @@ function postNewUserInfo() {
                     phone_number: phonenumber,
                     email: emailaddress,
                     password: password,
-                    team_id: response.id
+                    team_id: response.id,
+                    director: 'true'
                 })
             })
             .then(function(response) {

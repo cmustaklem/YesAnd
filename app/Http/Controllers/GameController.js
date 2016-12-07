@@ -15,11 +15,12 @@ class GameController {
   }
 
   * store(request, response) {
+    const currentUser = request.auth.getUser()
     let game = new Game()
     game.name = request.input('name')
     game.description = request.input('description')
     game.suggestion = request.input('suggestion')
-    game.team_id = request.input('team_id')
+    game.team_id = currentUser.team_id
     yield game.save()
     response.json(true)
   }

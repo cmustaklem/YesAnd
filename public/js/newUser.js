@@ -24,7 +24,8 @@ function postNewUserInfo() {
                 last_name: lastname,
                 phone_number: phonenumber,
                 email: emailaddress,
-                password: password
+                password: password,
+                team_id: window.location.href.split('?')[1].replace('team_id=', '').split('#')[0]
             })
         })
         .then(function(response) {
