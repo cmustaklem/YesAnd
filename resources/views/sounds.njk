@@ -9,17 +9,17 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                {# <select class="form-control" id="soundEffectGameList">
+                <select class="form-control" id="soundEffectGameList">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                </select><br> #}
+                </select><br>
             </div>
             <div class="col-sm-6" id="existingSoundBoard">
                 <ul class="list-unstyled">
-                    <li><audio controls><source src="https://s3.us-east-2.amazonaws.com/yesandsound/Slap.mp3" type="audio/mpeg"></audio></li>
+                    <li><audio controls><source src="https://yesandsound.s3.amazonaws.com/${fileName}" type="audio/mpeg"></audio></li>
                     {# <li><audio controls><source src="/assets/Slap.mp3" type="audio/mpeg"></audio></li>
                     <li><audio controls><source src="/assets/Slap.mp3" type="audio/mpeg"></audio></li> #}
                 </ul>

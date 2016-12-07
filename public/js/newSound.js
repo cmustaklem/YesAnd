@@ -20,6 +20,16 @@ function postNewSound() {
     })
 }
 
+document.getElementById('soundEffectGameList') {
+    playGameSound()
+}
+
+function(playGameSound) {
+    fetch('https://yesandsound.s3.amazonaws.com/${fileName}', {
+        method: 'GET'
+    })
+}
+
 // document.getElementById('playSound') {
 //     playNewSound()
 // }
