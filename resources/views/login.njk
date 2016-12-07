@@ -3,9 +3,9 @@
 {% block content %}
     {# {% include 'nav' %} #}
     <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-sm3"></div>
-      <div class="span3 centering text-center col-sm-6">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="centering text-center col-sm-6">
 
           {{ csrfField }}
 
@@ -21,8 +21,8 @@
           <button type="button" class="btn btn-default" id="loginButton" action>Submit</button>
         </form>
         <br>
-        <button type="button" class="btn btn-link" id="signUpLink"><a href="#">Click here to sign up</a></button><br>
-        <button type="button" class="btn btn-link" id="forgotPassword"><a href="#">Forgot Your Password?</a></button>
+        <button type="button" class="btn btn-link" id="signUpLink"><a href="/signup">Click here to sign up</a></button><br>
+        <button type="button" class="btn btn-link" id="forgotPassword"><a href="/forgotpassword">Forgot Your Password?</a></button>
       </div>
 
       <div class="col-sm3"></div>

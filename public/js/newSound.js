@@ -21,6 +21,16 @@ function postNewSound() {
 }
 
 document.getElementById('soundEffectGameList') {
+    presentSounds()
+}
+
+function(presentSounds) {
+    fetch('https://yesandsound.s3.amazonaws.com/${fileName}', {
+        method: 'GET'
+    })
+}
+
+document.getElementById('existingSoundBoard') {
     playGameSound()
 }
 
