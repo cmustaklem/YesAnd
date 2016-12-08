@@ -14,10 +14,11 @@ class ShowController {
   }
 
   * store(request, response) {
+    var currentUser = yield request.auth.getUser()
     let show = new Show()
     show.date = request.input('date')
     show.location = request.input('location')
-    show.team_id = request.input('team_id')
+    show.team_id = currentUser.team_id
     yield show.save()
     response.json(true)
   }

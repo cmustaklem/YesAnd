@@ -9,12 +9,58 @@ fetch('api/v1/games', {
         // col.appendChild(card)
         var col = document.createElement('div')
         var gams = document.createElement('option')
+        gams.className = ""
+        gams.htmlFor = 'checkbox-id';
         gams.innerHTML = item.name
         col.appendChild(gams)
-
         document.querySelector('#gameDropDownMenu').appendChild(gams)
+        // console.log(item.description);
+        var click = document.getElementById('gameDropDown')
     })
 })
+
+function myFunction() {
+    var x = document.getElementById("gameDropDownMenu").value;
+
+    // document.getElementById("gameDescription").innerHTML = "You selected: " + x;
+    console.log(x)
+    fetch('api/v1/games', {
+        method: 'get',
+        credentials: 'same-origin'
+    })
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(response) {
+        console.log(response)
+        if (response.name = x) {
+            // console.log(response.name)
+        var col = document.createElement('div')
+        col.className = 'row'
+
+        var card = document.createElement('div')
+        card.className = 'col-sm-6'
+        col.appendChild(card)
+
+        var span = document.createElement('span')
+        span.innerHTML = response.name
+        card.appendChild(span)
+        var span = document.createElement('span')
+        span.innerHTML = response.description
+        card.appendChild(span)
+        var span = document.createElement('span')
+        span.innerHTML = 'bye'
+        card.appendChild(span)
+
+        document.querySelector('#gameDescription').appendChild(col)
+}
+})
+
+}
+
+
+
+
 
     // function myFunction() {
     //     var x = document.getElementById('#gameDropDownMenu').value;

@@ -16,6 +16,7 @@ function postNewSound() {
 
     fetch('/api/v1/sounds', {
         method: 'post',
+        credentials: 'same-origin',
         body: formData
     })
 }

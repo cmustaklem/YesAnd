@@ -48,7 +48,12 @@ class UserController {
   }
 
   * edit(request, response) {
-    //
+      user.first_name = request.input('first_name')
+      user.last_name = request.input('last_name')
+      user.email = request.input('email')
+      user.password = yield Hash.make(request.input('password'))
+      user.phone_number = request.input('phone_number')
+      yield user.save()
   }
 
   * update(request, response) {
