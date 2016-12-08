@@ -57,7 +57,7 @@ Route.get('/newuser', function * (request, response) {
 //Authenticated routes
 Route.group('authenticated', function() {
   Route.get('/home', function * (request, response) {
-    yield response.sendView('layoutmaindirectorscreen')
+    yield response.sendView('welcome')
   })
   Route.get('/directorview', function * (request, response) {
     yield response.sendView('layoutmaindirectorscreen')

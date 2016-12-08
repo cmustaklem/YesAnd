@@ -13,7 +13,7 @@ function postNewUserInfo() {
     // console.log(firstname.value)
 
     if(firstname && lastname && phonenumber && emailaddress && password) {
-        fetch('api/v1/users', {
+        fetch('/api/v1/users', {
             method: 'post',
             credentials: 'same-origin',
             headers: {
@@ -33,11 +33,14 @@ function postNewUserInfo() {
                 return response.json()
             }
             else {
-                alert(response.body)
+                alert('Error.')
+                return false
             }
         })
         .then(function(response) {
-            window.location.href = '/playerhome'
+            if (response !== false) {
+                window.location.href = '/playerhome'
+            }
         })
     }
 }

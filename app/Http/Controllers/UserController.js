@@ -20,7 +20,7 @@ class UserController {
 
   * store(request, response) {
     var team_id
-    
+
     if (isNaN(request.input('team_id'))) {
       team_id = Encryption.decrypt(decodeURIComponent(request.input('team_id')))
     } else {
@@ -37,6 +37,9 @@ class UserController {
     user.director = (request.input('director') === 'true')
     // user.picture = request.input('picture')
     yield user.save()
+
+    const authCheck = yield request.auth.attempt(request.input('email'), request.input('password'))
+
     response.json(user)
   }
 

@@ -1,6 +1,6 @@
 // console.log('Hello World')
 
-
+var team
 var login = document.querySelector('#loginButton')
 var password = document.querySelector('#passwordLogin')
 
@@ -34,7 +34,10 @@ function loginHandler() {
     }
   })
   .then(response => response.json())
-
+// .then(function(response){
+//   team = response.user.team_id
+//   console.log(team)
+// })
   .then(signedupHandler)
 }
 
@@ -45,8 +48,6 @@ function signedupHandler(response){
  }
    else{
      response.forEach(function(error){
-
-
        var errorDiv = document.createElement('div')
        errorDiv.classList.add('alert', 'alert-danger')
        errorDiv.innerHTML = error
