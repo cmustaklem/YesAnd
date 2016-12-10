@@ -4,17 +4,85 @@
 {% block content %}
 <main><br>
   <div class="container">
-    <div id="gameAdd">
-    </div>
-    {# <div class="row"> #}
-      {# <div class="col-lg-3">
+    {# <div id="gameAdd">
+    </div> #}
+    <div class="row">
+      <div class="col-sm-3">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h5>Something new</h5>
+            <h5>Add Game and Casts</h5>
           </div>
+        </div>
           <form class="shadow" action="index.html" method="post" id="newGameTable">
             <div class="panel-body">
                 <select class="form-control" id="gameListing">
+                </select>
+              <br>
+              <div id="castListing">
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 4
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 5
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 6
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 7
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 8
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 9
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 10
+                </label>
+              </div>
+              <button value={this.state.newTodo} className="btn-block" onClick={this.click} onChange={this.typing} type="button" id="addGame">Add to my list</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-9">
+          <form class="shadow" action="index.html" method="post" id="newGameTable">
+            <div class="panel-body">
+              <div class="row">
+                <div id="gamecastline">
+                  <div class="col-xs-3">
+                    <h2>Survivor</h2>
+                  </div>
+                  <div class="col-xs-7">
+                    <ul>
+                      <li>Cast Member 1</li>
+                      <li>Cast Member 2</li>
+                      <li>Cast Member 3</li>
+                      <li>Cast Member 4</li>
+                      <li>Cast Member 5</li>
+                      <li>Cast Member 6</li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-2">
+                    <input type="button" class="btn btn-primary" id="deleteGame" value="X">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+                {# <select class="form-control" id="gameListing">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -38,15 +106,41 @@
                 <label class="checkbox">
                   <input type="checkbox" id="inlineCheckbox3" value="option3"> 5
                 </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 6
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 7
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 8
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 9
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> 10
+                </label>
               </div>
-              <button value={this.state.newTodo} className="btn-block" onClick={this.click} onChange={this.typing} type="button" id="addGame">Add to my list</button>
-            </div>
-          </form>
-        </div>
-      </div> #}
-    {# </div> #}
+              <button value={this.state.newTodo} className="btn-block" onClick={this.click} onChange={this.typing} type="button" id="addGame">Add to my list</button> #}
+            {# </div>
+          </form> #}
+          {# <form class="" action="index.html" method="post">
+              <div class="col-xs-9 gameCard">
+                <h1>Game Name</h1>
+              </div>
+              <div class="col-xs-3">
+                <ul>
+                  <li>Cast Member 1</li>
+                  <li>Cast Member 2</li>
+                  <li>Cast Member 3</li>
+                  <li>Cast Member 4</li>
+                  <li>Cast Member 5</li>
+                  <li>Cast Member 6</li>
+                </ul>
+              </div>
+            </form> #}
 
-  </div>
 {# </div>
 </div> #}
 </main>

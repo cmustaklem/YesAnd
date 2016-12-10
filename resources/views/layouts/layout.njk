@@ -25,6 +25,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -33,11 +35,12 @@
             <div class="col-sm-12 toplinks">
                 <span id="homeButton"><a href="/home">Home</a></span>
                 <span id="gamesButton"><a href="/gamelist">Games</a></span>
-                <span id="castListsButton"><a href="/showlist">Cast Lists</a></span>
+                <span id="castListsButton"><a href="/showlist">Shows</a></span>
                 <span id="logOutButton"><a href="api/v1/auth/logout">Sign out</a></span>
             </div>
         </div>
     </header>
+
     {% if currentUser.director %}
     <div class="container-fluid">
         <div class="row">

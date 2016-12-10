@@ -2,12 +2,47 @@
 
 {% block content%}
     {# <h1>Wlcome</h1> #}
+
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <h3 class="text-center">Welcome to YesAnd</h3>
-                <p><a href="/playeredit">Click here to view and edit your credentials</a></p>
+                <p class="text-center"><a href="/playeredit">Click here to view and edit your credentials</a></p>
             </div>
         </div>
     </div>
+    
+
+    {% if currentUser.director %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3" id="editPlayersMenu">
+                <div>
+                    <dl>
+                        <dd><a href="#game1">users.first_name + ' ' + users.last_name</a></dd>
+                        <dd><a href="#game2">users.first_name + ' ' + users.last_name</a></dd>
+                        <dd><a href="#game3">users.first_name + ' ' + users.last_name</a></dd>
+                        <dd><a href="#game4">users.first_name + ' ' + users.last_name</a></dd>
+                        <dd><a href="#game5">users.first_name + ' ' + users.last_name</a></dd>
+                        <dd><a href="#game6">users.first_name + ' ' + users.last_name</a></dd>
+                        <dd><a href="#game7">users.first_name + ' ' + users.last_name</a></dd>
+                        <dd><a href="#game8">users.first_name + ' ' + users.last_name</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-sm-9" id="directorWelcomeDisplay">
+                <h3 class="text-center">Welcome to YesAnd</h3>
+                <dl>
+                    <dd><a href="#game1">shows.location + ' ' + shows.date</a></dd>
+                    <dd><a href="#game2">shows.location + ' ' + shows.date</a></dd>
+                    <dd><a href="#game3">shows.location + ' ' + shows.date</a></dd>
+                    <dd><a href="#game4">shows.location + ' ' + shows.date</a></dd>
+                    <dd><a href="#game5">shows.location + ' ' + shows.date</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+<script type="text/javascript" src="/js/welcome.js"></script>
 {% endblock %}

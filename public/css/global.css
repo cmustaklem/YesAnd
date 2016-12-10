@@ -103,6 +103,10 @@ form {
   margin-left: 5vw;
 }
 
+.selectpicker {
+  border: 1px solid gray;
+}
+
 #newGameForm {
   margin-top: 30px;
 }
@@ -153,4 +157,13 @@ form {
 
 #addNewShowPart1 {
   margin-left: 5vw;
+}
+
+#gameDescription {
+  margin-top: 29.25px;
+}
+
+#deleteGame {
+  border-radius: 50%;
+  margin-top: 40px;
 }

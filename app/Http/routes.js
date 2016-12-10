@@ -78,7 +78,7 @@ Route.group('authenticated', function() {
   Route.get('/newshow', function * (request, response) {
     yield response.sendView('newShow')
   })
-  Route.get('/newshow2', function * (request, response) {
+  Route.get('/newshowgames', function * (request, response) {
     yield response.sendView('newShow2')
   })
   Route.get('/sounds', function * (request, response) {

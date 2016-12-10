@@ -1,21 +1,44 @@
-fetch('api/v1/games', {
+fetch('/api/v1/games', {
+    method: 'get',
     credentials: 'same-origin'
 })
-
+//
 .then(response => response.json()) //response.json parses the data
 // .then(response => listPlanets(response.results))
 .then(function(items){
     items.forEach(function(item){
         // col.appendChild(card)
         var col = document.createElement('div')
-        var gams = document.createElement('option')
-        gams.className = ""
-        gams.htmlFor = 'checkbox-id';
-        gams.innerHTML = item.name
-        col.appendChild(gams)
-        document.querySelector('#gameDropDownMenu').appendChild(gams)
-        // console.log(item.description);
-        var click = document.getElementById('gameDropDown')
+        col.className = 'panel-heading'
+        var col = document.createElement('div')
+        col.className = 'row'
+
+        var card = document.createElement('div')
+        card.className = 'col-sm-6'
+        col.appendChild(card)
+
+        // var span = document.createElement('span')
+        // span.innerHTML = response.name
+        // card.appendChild(span)
+        // var span = document.createElement('span')
+        // span.innerHTML = response.description
+        // card.appendChild(span)
+        // var span = document.createElement('span')
+        // span.innerHTML = response.suggestion
+        // card.appendChild(span)
+
+        // document.querySelector('#gameDescription').appendChild(col)
+
+        // var card = document.createElement('div')
+        // card.className = 'col-sm-6'
+        // col.appendChild(card)
+        // gams.className = ""
+        // gams.htmlFor = 'checkbox-id';
+        // gams.innerHTML = item.name
+        // col.appendChild(gams)
+        // document.querySelector('#gameDropDownMenu').appendChild(gams)
+        // // console.log(item.description);
+        // var click = document.getElementById('gameDropDown')
     })
 })
 
@@ -24,7 +47,7 @@ function myFunction() {
 
     // document.getElementById("gameDescription").innerHTML = "You selected: " + x;
     console.log(x)
-    fetch('api/v1/games', {
+    fetch('/api/v1/games', {
         method: 'get',
         credentials: 'same-origin'
     })
@@ -32,7 +55,6 @@ function myFunction() {
         return response.json()
     })
     .then(function(response) {
-        console.log(response)
         if (response.name = x) {
             // console.log(response.name)
         var col = document.createElement('div')
@@ -49,7 +71,7 @@ function myFunction() {
         span.innerHTML = response.description
         card.appendChild(span)
         var span = document.createElement('span')
-        span.innerHTML = 'bye'
+        span.innerHTML = response.suggestion
         card.appendChild(span)
 
         document.querySelector('#gameDescription').appendChild(col)
