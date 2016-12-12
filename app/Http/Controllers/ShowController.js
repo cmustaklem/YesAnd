@@ -1,16 +1,13 @@
 'use strict'
 
 const Show = use('App/Model/Show')
+const User = use('App/Model/User')
 
 class ShowController {
 
   * index(request, response) {
       const shows = yield Show.all()
       response.json(shows)
-  }
-
-  * create(request, response) {
-    //
   }
 
   * store(request, response) {
@@ -20,23 +17,69 @@ class ShowController {
     show.location = request.input('location')
     show.team_id = currentUser.team_id
     yield show.save()
-    response.json(true)
+    response.json(show)
   }
 
   * show(request, response) {
-    //
-  }
+    let show = yield Show
+      .query()
+      .with('users','games')
+      .where('id', request.param('id'))
+      .fetch()
 
-  * edit(request, response) {
-    //
+    if (show.value().length) {
+      show = show.value().pop().toJSON()
+      const gameIds = show.games.map(game => game.id)
+      const gamePlayers = yield User
+        .query()
+        .select('first_name', 'last_name', 'game_id', 'users.id')
+        .join('show_game', 'show_game.user_id', 'users.id')
+        .whereIn('show_game.game_id', gameIds)
+
+      show.games = show.games.map(game => {
+        game.users = []
+
+        gamePlayers.forEach(player => {
+          if (player.game_id === game.id) {
+            game.users.push(player)
+          }
+        })
+
+        return game
+      })
+
+      response.json(show)
+      return
+    }
+
+    response.json(null)
   }
 
   * update(request, response) {
-    //
+    const show = yield Show.find(request.param('id'))
+
+    if (show) {
+      show.date = request.input('date')
+      show.location = request.input('location')
+      yield show.save()
+
+      response.json(show)
+      return
+    }
+
+    response.json(null)
   }
 
   * destroy(request, response) {
-    //
+    const show = yield Show.find(request.param('id'))
+
+    if (show) {
+      yield show.delete()
+      response.json(show)
+      return
+    }
+
+    response.json(null)
   }
 
 }

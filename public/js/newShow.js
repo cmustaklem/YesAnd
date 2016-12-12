@@ -59,7 +59,23 @@ function postFirstHalfOfShow() {
                 date: show_date,
                 location: show_location
             })
+            .then(function(response) {
+                 return response.json()
+            })
+            .then(function(response) {
+                 fetch('/api/v1/show_user', {
+                     method: 'post',
+                     headers: {
+                         'Content-Type': 'application/json'
+                     },
+                     body: JSON.stringify({
+                         user_id: cast
+                })
+            })
         })
+    })
+}
+}
         // .then(function(response) {
         //     return response.json()
         // })
@@ -85,9 +101,7 @@ function postFirstHalfOfShow() {
         //         window.location.href = '/home'
         //     })
         // })
-    }
 
-}
         // .then(function(response) {
         //     fetch('/api/v1/users', {
         //         method: 'post',

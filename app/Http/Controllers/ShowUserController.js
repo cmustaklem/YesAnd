@@ -9,32 +9,35 @@ class ShowUserController {
     response.json(showusers)
   }
 
-  * create(request, response) {
-    //
-  }
-
   * store(request, response) {
     let showuser = new ShowUser()
     showuser.show_id = request.input('show_id')
     showuser.user_id = request.input('user_id')
     yield showuser.save()
-    response.json(true)
+    response.json(showuser)
   }
 
   * show(request, response) {
-    //
-  }
+    const showUser = yield ShowUser.find(request.param('id'))
 
-  * edit(request, response) {
-    //
-  }
+    if (showUser) {
+      response.json(showUser)
+      return
+    }
 
-  * update(request, response) {
-    //
+    response.json(null)
   }
 
   * destroy(request, response) {
-    //
+    const showUser = yield ShowUser.find(request.param('id'))
+
+    if (showUser) {
+      yield showUser.delete()
+      response.json(showUser)
+      return
+    }
+
+    response.json(null)
   }
 
 }

@@ -1,23 +1,9 @@
-// 'use strict'
-//
-// class AuthController {
-//     * index(request, response) {
-//         yield response.sendView('login')
-//     }
-// }
-//
-// module.exports = AuthController
-
 'use strict'
 
 const User = use('App/Model/User')
 const Hash = use('Hash')
 
 class AuthController {
-
-    // * index(request, response) {
-    //     yield response.sendView('login')
-    // }
 
     * login(request, response) {
         const email = request.input('email')

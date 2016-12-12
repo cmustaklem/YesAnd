@@ -9,33 +9,36 @@ class ShowGameController {
     response.json(teams)
   }
 
-  * create(request, response) {
-    //
-  }
-
   * store(request, response) {
     let showgame = new ShowGame()
     showgame.show_id = request.input('show_id')
     showgame.game_id = request.input('game_id')
     showgame.user_id = request.input('user_id')
     yield showgame.save()
-    response.json(true)
+    response.json(showgame)
   }
 
   * show(request, response) {
-    //
-  }
+    const showGame = yield ShowGame.find(request.param('id'))
 
-  * edit(request, response) {
-    //
-  }
+    if (showGame) {
+      response.json(showGame)
+      return
+    }
 
-  * update(request, response) {
-    //
+    response.json(null)
   }
 
   * destroy(request, response) {
-    //
+    const showGame = yield ShowGame.find(request.param('id'))
+
+    if (showGame) {
+      yield showGame.delete()
+      response.json(showGame)
+      return
+    }
+
+    response.json(null)
   }
 
 }

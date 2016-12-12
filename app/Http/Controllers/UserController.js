@@ -14,10 +14,6 @@ class UserController {
     response.json(users)
   }
 
-  * create(request, response) {
-    //
-  }
-
   * store(request, response) {
     var team_id
 
@@ -44,24 +40,39 @@ class UserController {
   }
 
   * show(request, response) {
-    //
-  }
+    const user = yield User.find(request.param('id'))
 
-  * edit(request, response) {
-      user.first_name = request.input('first_name')
-      user.last_name = request.input('last_name')
-      user.email = request.input('email')
-      user.password = yield Hash.make(request.input('password'))
-      user.phone_number = request.input('phone_number')
-      yield user.save()
+    if (user) {
+      response.json(user)
+      return
+    }
+
+    response.json(null)
   }
 
   * update(request, response) {
-    //
+    const user = yield User.find(request.param('id'))
+
+    user.first_name = request.input('first_name')
+    user.last_name = request.input('last_name')
+    user.email = request.input('email')
+    user.password = yield Hash.make(request.input('password'))
+    user.phone_number = request.input('phone_number')
+    yield user.save()
+
+    response.json(user)
   }
 
   * destroy(request, response) {
-    //
+    const user = yield User.find(request.param('id'))
+
+    if (user) {
+      yield user.delete()
+      response.json(user)
+      return
+    }
+
+    response.json(null)
   }
 
   * invite(request, response) {

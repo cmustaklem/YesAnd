@@ -15,10 +15,6 @@ class SoundController {
     response.json(sounds)
   }
 
-  * create(request, response) {
-    //
-  }
-
   * store(request, response) {
     const fileName = request.file('sound_file').clientName()
 
@@ -46,7 +42,7 @@ class SoundController {
           return response.json(error)
         }
         else {
-          response.json(`https://yesandsound.s3.amazonaws.com/${fileName}`)
+          response.json(sound)
         }
       })
 
@@ -54,54 +50,26 @@ class SoundController {
   }
 
   * show(request, response) {
-    let sound = yield Sound.findBy('id', request.param('id'))
+    const sound = yield Sound.find(request.param('id'))
 
-    temp.track()
-    var tempFile = Helpers.storagePath('SlapTest.mp3')
+    if (sound) {
+      response.json(sound)
+      return
+    }
 
-    temp.open('x', function(error, info) {
-      if (!error) {
-        fs.write(info.fd, sound.sound_file)
-        fs.close(info.fd, function(error) {
-          response
-            .header('Content-Type', 'audio/mpeg')
-            .header('Content-Length', Buffer.byteLength(sound.sound_file))
-            .download(info.path)
-        })
-      }
-    })
-  }
-
-  * edit(request, response) {
-    //
-  }
-
-  * update(request, response) {
-    //
+    response.json(null)
   }
 
   * destroy(request, response) {
-    //
-  }
+    const sound = yield Sound.find(request.param('id'))
 
-  * updateSound(request, response) {
-    const sound_file = request.file('sound_file', {
-        maxSize: '4mb',
-        allowedExtensions: ['wav', 'mp3', 'wv', 'jpeg', 'ogg', 'jpeg', 'awb', 'jpeg', 'm4p', 'm4b', 'mmf', 'oba', 'oga', 'png']
-    })
+    if (sound) {
+      yield sound.delete()
+      response.json(sound)
+      return
+    }
 
-    const sound_id = request.param('id')
-    const sound = yield Sound.findOrFail(sound_id)
-    sound.sound_file = sound_file
-
-  //   yield avatar.move(Helpers.storagePath(), fileName)
-  //   if (!avatar.moved()) {
-  //     response.badRequest(avatar.errors())
-  //     return
-  //   }
-  //   user.avatar = avatar.uploadPath()
-  //   yield user.save()
-  //   response.ok('Avatar updated successfully')
+    response.json(null)
   }
 
 }

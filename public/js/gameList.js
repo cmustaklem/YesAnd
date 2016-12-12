@@ -1,66 +1,53 @@
-import React from 'react'
-import ListOfGames from '/components/ListOfGames'
-import ReactDOM from 'react-dom'
-
-
-
-function renderView() {
-   ReactDOM.render(
-       <ListOfGames />,
-       document.getElementById('gameDropDown')
-   )
-}
-renderView()
 
 
 
 
 
-// fetch('/api/v1/games', {
-//     method: 'get',
-//     credentials: 'same-origin'
-// })
-//
-// .then(response => response.json()) //response.json parses the data
-// // .then(response => listPlanets(response.results))
-// .then(function(items){
-//     console.log(items)
-//     items.results.forEach(function(item){
-//         var col = document.createElement('div')
-//         col.className = 'panel-group'
-//         col.setAttribute("aria-multiselectable", "true;");
-//
-//         var card = document.createElement('div')
-//         card.className = 'card'
-//         col.appendChild(card)
-//
-//         var img = document.createElement('img')
-//         img.setAttribute('src', item.Images[0].url_fullxfull)
-//         img.className = 'previewImage'
-//         card.appendChild(img)
-//
-//         var span = document.createElement('span')
-//         span.innerHTML = item.title
-//         card.appendChild(span)
-//
-//         var row = document.createElement('div')
-//         row.className = 'row'
-//         card.appendChild(row)
-//
-//         var colLeft = document.createElement('div')
-//         // colLeft.setAttribute(item.Shop.shop_name)
-//         colLeft.className = 'col-xs-6 text-muted itemSeller'
-//         colLeft.innerHTML = item.Shop.shop_name
-//         row.appendChild(colLeft)
-//
-//         var colRight = document.createElement('div')
-//         colRight.className = 'col-xs-6 text-right text-success'
-//         colRight.innerHTML = '$' + item.price
-//         row.appendChild(colRight)
-//
-//         document.querySelector('#gameDropDown').appendChild(col)
-//     })
-// })
+fetch('/api/v1/games', {
+    method: 'get',
+    credentials: 'same-origin'
+})
+
+.then(response => response.json()) //response.json parses the data
+// .then(response => listPlanets(response.results))
+.then(function(items){
+    console.log(items)
+    items.results.forEach(function(item){
+        var col = document.createElement('div')
+        col.className = 'panel-group'
+        col.setAttribute("aria-multiselectable", "true;");
+
+        var card = document.createElement('div')
+        card.className = 'card'
+        col.appendChild(card)
+
+        var img = document.createElement('img')
+        img.setAttribute('src', item.Images[0].url_fullxfull)
+        img.className = 'previewImage'
+        card.appendChild(img)
+
+        var span = document.createElement('span')
+        span.innerHTML = item.title
+        card.appendChild(span)
+
+        var row = document.createElement('div')
+        row.className = 'row'
+        card.appendChild(row)
+
+        var colLeft = document.createElement('div')
+        // colLeft.setAttribute(item.Shop.shop_name)
+        colLeft.className = 'col-xs-6 text-muted itemSeller'
+        colLeft.innerHTML = item.Shop.shop_name
+        row.appendChild(colLeft)
+
+        var colRight = document.createElement('div')
+        colRight.className = 'col-xs-6 text-right text-success'
+        colRight.innerHTML = '$' + item.price
+        row.appendChild(colRight)
+
+        document.querySelector('#gameDropDown').appendChild(col)
+    })
+})
 
 
 
