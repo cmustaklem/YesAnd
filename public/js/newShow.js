@@ -2,22 +2,10 @@ fetch('api/v1/users', {
     credentials: 'same-origin'
 })
 
-// var checkbox = document.createElement('input');
-// checkbox.type = 'checkbox';
-// checkbox.name = item.first_name + ' ' + item.last_name;
-// checkbox.value = item.first_name + ' ' + item.last_name;
-
-
-
 .then(response => response.json()) //response.json parses the data
 // .then(response => listPlanets(response.results))
 .then(function(items){
     items.forEach(function(item){
-        // col.appendChild(card)
-        // var col = document.createElement('label')
-        // var players = document.createElement('checkbox-inline')
-        // players.innerHTML = item.first_name + ' ' + item.last_name
-        // col.appendChild(players)
         var div = document.createElement('div')
         var label = document.createElement('label')
         div.classList = 'playerArrangement';
@@ -46,7 +34,7 @@ function postFirstHalfOfShow() {
     var show_date = document.getElementById('show_date').value
     var show_location = document.getElementById('show_location').value
     var cast = document.getElementById('addNewShowPart1')
-
+    var checkedBoxes = getCheckedBoxes("mycheckboxes");
 
     if(show_date && show_location && cast){
         fetch('/api/v1/shows', {
@@ -65,11 +53,13 @@ function postFirstHalfOfShow() {
             .then(function(response) {
                  fetch('/api/v1/show_user', {
                      method: 'post',
+                     credentials: 'same-origin',
                      headers: {
                          'Content-Type': 'application/json'
                      },
                      body: JSON.stringify({
                          user_id: cast
+                         show_id: response.id
                 })
             })
         })
