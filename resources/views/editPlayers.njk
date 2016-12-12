@@ -1,0 +1,44 @@
+{% extends 'layouts.layout' %}
+
+{% block content %}
+
+{{ form.open({action: 'UserController.store'})}}
+
+{# {% include 'nav' %} #}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <ul class="list-unstyled" id="listOfPlayersEdit">
+              {# <li>...</li> #}
+            </ul>
+        </div>
+        <div class="col-md-9 span3 centering text-center">
+            <form class="shadow" id="signUp">
+                <div class="form-group text-left" id="userFirstName">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" value="{user.first_name}">
+                </div>
+                <div class="form-group text-left" id="userLastName">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" value="{user.last_name}">
+                </div>
+                <div class="form-group text-left" id="userPhoneNumber">
+                    <label for="phoneNumberLogin">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumberLogin" value="{user.phone_number}">
+                </div>
+                <div class="form-group text-left" id="userEmailAddress">
+                    <label for="emailAddressLogin">Email address/Username</label>
+                    <input type="text" class="form-control" id="emailAddressLogin" value="{user.email}">
+                </div>
+                <div class="form-group text-left" id="userPassword">
+                    <label for="passwordLogin">Password</label>
+                    <input type="text" class="form-control" id="passwordLogin" value="{user.password}">
+                </div>
+                <button type="button" class="btn btn-default" id="signUpUserButton">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="/js/editPlayers.js"></script>
+{% endblock %}

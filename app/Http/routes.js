@@ -93,6 +93,9 @@ Route.group('authenticated', function() {
   Route.get('/playeredit', function * (request, response) {
     yield response.sendView('editPlayer')
   })
+  Route.get('/playersedit', function * (request, response) {
+    yield response.sendView('editPlayers')
+  })
   Route.get('/directorplayeredit', function * (request, response) {
     yield response.sendView('directorPlayerEditView')
   })

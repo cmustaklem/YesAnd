@@ -52,46 +52,58 @@
 	});
 
 	function postNewUserInfo() {
-	    var teamname = document.getElementById('teamName');
-	    var website = document.getElementById('teamWebsite');
-	    var city = document.getElementById('teamCity');
-	    var state = document.getElementById('teamState');
-	    var firstname = document.getElementById('firstName');
-	    var lastname = document.getElementById('lastName');
-	    var phonenumber = document.getElementById('phoneNumber');
-	    var emailaddress = document.getElementById('emailAddressLogin');
-	    var password = document.getElementById('passwordLogin');
+	    var teamname = document.getElementById('teamName').value;
+	    var website = document.getElementById('teamWebsite').value;
+	    var city = document.getElementById('teamCity').value;
+	    var state = document.getElementById('teamState').value;
+	    var firstname = document.getElementById('firstName').value;
+	    var lastname = document.getElementById('lastName').value;
+	    var phonenumber = document.getElementById('phoneNumber').value;
+	    var emailaddress = document.getElementById('emailAddressLogin').value;
+	    var password = document.getElementById('passwordLogin').value;
 	    // console.log(firstname)
 
-	    fetch('api/v1/teams', {
-	        method: 'post',
-	        headers: {
-	            'Content-Type': 'application/json'
-	        },
-	        body: JSON.stringify({
-	            name: teamname.value,
-	            website: website.value,
-	            city: city.value,
-	            state: state.value
-	        })
-	    }).then(function (response) {
-	        return response.json();
-	    }).then(function (response) {
-	        fetch('api/v1/users', {
+	    if (teamname && website && city && state && firstname && lastname && phonenumber && emailaddress && password) {
+	        fetch('/api/v1/teams', {
 	            method: 'post',
+	            credentials: 'same-origin',
 	            headers: {
 	                'Content-Type': 'application/json'
 	            },
 	            body: JSON.stringify({
-	                first_name: firstname.value,
-	                last_name: lastname.value,
-	                phone_number: phonenumber.value,
-	                email: emailaddress.value,
-	                password: password.value,
-	                team_id: response.id
+	                name: teamname,
+	                website: website,
+	                city: city,
+	                state: state
 	            })
+	        }).then(function (response) {
+	            return response.json();
+	        }).then(function (response) {
+	            fetch('/api/v1/users', {
+	                method: 'post',
+	                headers: {
+	                    'Content-Type': 'application/json'
+	                },
+	                body: JSON.stringify({
+	                    first_name: firstname,
+	                    last_name: lastname,
+	                    phone_number: phonenumber,
+	                    email: emailaddress,
+	                    password: password,
+	                    team_id: response.id,
+	                    director: 'true'
+	                })
+	            }).then(function (response) {
+	                if (response.status >= 200 && response.status <= 400) {
+	                    return response.json();
+	                } else {
+	                    alert(response.body);
+	                }
+	            }).then(function (response) {
+	                window.location.href = '/home';
+	            });
 	        });
-	    });
+	    }
 	}
 
 /***/ }

@@ -50,7 +50,8 @@
                   <input type="checkbox" id="inlineCheckbox3" value="option3"> 10
                 </label>
               </div>
-              <button value={this.state.newTodo} className="btn-block" onClick={this.click} onChange={this.typing} type="button" id="addGame">Add to my list</button>
+              <button class="btn btn-default" type="button" name="button" id="addGameShow" onclick="window.location='/newshowgames';">Add to my list</button>
+                {# <button value={this.state.newTodo} className="btn-block" onClick={this.click} onChange={this.typing} type="button" id="addGame"></button> #}
             </div>
           </form>
         </div>
@@ -73,7 +74,7 @@
                     </ul>
                   </div>
                   <div class="col-xs-2">
-                    <input type="button" class="btn btn-primary" id="deleteGame" value="X">
+                    <input type="button" class="btn btn-success" id="deleteGame" value="X">
                   </div>
                 </div>
               </div>

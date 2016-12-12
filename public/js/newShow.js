@@ -21,13 +21,14 @@ fetch('api/v1/users', {
         var div = document.createElement('div')
         var label = document.createElement('label')
         div.classList = 'playerArrangement';
+        div.classList = 'caster';
         label.htmlFor = 'checkbox-id';
         label.classList = 'bold';
         label.appendChild(document.createTextNode(item.first_name + ' ' + item.last_name));
         var checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.name = item.first_name + ' ' + item.last_name;
-        checkbox.value = item.first_name + ' ' + item.last_name;
+        checkbox.value = item.id;
         checkbox.classList = 'checkbox-inline';
         div.appendChild(checkbox);
         div.appendChild(label);

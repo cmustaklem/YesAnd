@@ -50,35 +50,191 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _AddNewPlayers = __webpack_require__(32);
-
-	var _AddNewPlayers2 = _interopRequireDefault(_AddNewPlayers);
-
 	var _reactDom = __webpack_require__(33);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import Todos from '../components/Todos'
-	//we are using ReactDOM because the values within this global js file will be consistently updated and placed onto the HTML file. It is rendering the Todos component. It is rendering within the #todoApp div.
-
 	function renderView() {
-	    _reactDom2.default.render(_react2.default.createElement(_AddNewPlayers2.default, null), document.getElementById('addNewProspects'));
+	    _reactDom2.default.render(_react2.default.createElement(ListOfGames, null), document.getElementById('gameDropDown'));
 	}
 
 	renderView();
 
-	// var player = 1;
-	// var value
-	// function add_fields() {
-	//     player++;
-	//     var addToList = document.getElementById('addPlayers')
-	//     var addingplayerline = document.createElement("div");
-	//     addingplayerline.innerHTML = '<div class="form-group"> Add Player ' + player +':</div><div class="content addNewPlayerRow"><span><input type="email" class="addNewPlayerRow" name="newplayeremailaddress" placeholder="newplayer@funnymail.com" value="" /></span></div>';
+	// fetch('/api/v1/games', {
+	//     method: 'get',
+	//     credentials: 'same-origin'
+	// })
 	//
-	//     addToList.appendChild(addingplayerline)
+	// .then(response => response.json()) //response.json parses the data
+	// // .then(response => listPlanets(response.results))
+	// .then(function(items){
+	//     console.log(items)
+	//     items.results.forEach(function(item){
+	//         var col = document.createElement('div')
+	//         col.className = 'panel-group'
+	//         col.setAttribute("aria-multiselectable", "true;");
+	//
+	//         var card = document.createElement('div')
+	//         card.className = 'card'
+	//         col.appendChild(card)
+	//
+	//         var img = document.createElement('img')
+	//         img.setAttribute('src', item.Images[0].url_fullxfull)
+	//         img.className = 'previewImage'
+	//         card.appendChild(img)
+	//
+	//         var span = document.createElement('span')
+	//         span.innerHTML = item.title
+	//         card.appendChild(span)
+	//
+	//         var row = document.createElement('div')
+	//         row.className = 'row'
+	//         card.appendChild(row)
+	//
+	//         var colLeft = document.createElement('div')
+	//         // colLeft.setAttribute(item.Shop.shop_name)
+	//         colLeft.className = 'col-xs-6 text-muted itemSeller'
+	//         colLeft.innerHTML = item.Shop.shop_name
+	//         row.appendChild(colLeft)
+	//
+	//         var colRight = document.createElement('div')
+	//         colRight.className = 'col-xs-6 text-right text-success'
+	//         colRight.innerHTML = '$' + item.price
+	//         row.appendChild(colRight)
+	//
+	//         document.querySelector('#gameDropDown').appendChild(col)
+	//     })
+	// })
+
+
+	//
+	// .then(response => response.json()) //response.json parses the data
+	// // .then(response => listPlanets(response.results))
+	// .then(function(items){
+	//     items.forEach(function(item){
+	//         // col.appendChild(card)
+	//         var col = document.createElement('div')
+	//         col.className = 'panel-heading'
+	//         var col = document.createElement('div')
+	//         col.className = 'row'
+	//
+	//         var card = document.createElement('div')
+	//         card.className = 'col-sm-6'
+	//         col.appendChild(card)
+
+	// var span = document.createElement('span')
+	// span.innerHTML = response.name
+	// card.appendChild(span)
+	// var span = document.createElement('span')
+	// span.innerHTML = response.description
+	// card.appendChild(span)
+	// var span = document.createElement('span')
+	// span.innerHTML = response.suggestion
+	// card.appendChild(span)
+
+	// document.querySelector('#gameDescription').appendChild(col)
+
+	// var card = document.createElement('div')
+	// card.className = 'col-sm-6'
+	// col.appendChild(card)
+	// gams.className = ""
+	// gams.htmlFor = 'checkbox-id';
+	// gams.innerHTML = item.name
+	// col.appendChild(gams)
+	// document.querySelector('#gameDropDownMenu').appendChild(gams)
+	// // console.log(item.description);
+	// var click = document.getElementById('gameDropDown')
+	//     })
+	// })
+
+	// function myFunction() {
+	//     var x = document.getElementById("gameDropDownMenu").value;
+	//
+	//     // document.getElementById("gameDescription").innerHTML = "You selected: " + x;
+	//     console.log(x)
+	//     fetch('/api/v1/games', {
+	//         method: 'get',
+	//         credentials: 'same-origin'
+	//     })
+	//     .then(function(response) {
+	//         return response.json()
+	//     })
+	//     .then(function(response) {
+	//         if (response.name = x) {
+	//             // console.log(response.name)
+	//         var col = document.createElement('div')
+	//         col.className = 'row'
+	//
+	//         var card = document.createElement('div')
+	//         card.className = 'col-sm-6'
+	//         col.appendChild(card)
+	//
+	//         var span = document.createElement('span')
+	//         span.innerHTML = response.name
+	//         card.appendChild(span)
+	//         var span = document.createElement('span')
+	//         span.innerHTML = response.description
+	//         card.appendChild(span)
+	//         var span = document.createElement('span')
+	//         span.innerHTML = response.suggestion
+	//         card.appendChild(span)
+	//
+	//         document.querySelector('#gameDescription').appendChild(col)
 	// }
+	// })
+	//
+	// }
+
+
+	// function myFunction() {
+	//     var x = document.getElementById('#gameDropDownMenu').value;
+	//     document.getElementById('#gamenamedescription').innerHTML = ;
+	// }
+
+
+	// fetch('/api/v1/games')
+	//
+	// .then(response => response.json())
+	// .then(function(items){
+	//     console.log(items)
+	//         var gameOption = document.createElement('option')
+	//         gameOption.innerHTML = items.name
+	//         gams.appendChild(gameOption)
+	//         document.querySelector('#gameDropDownMenu').appendChild(gams)
+	//     })
+	//
+	//     fetch()
+	//
+	//     .then(response => response.json()) //response.json parses the data
+	//     // .then(response => listPlanets(response.results))
+	//     .then(function(items){
+	//         console.log(items)
+	//         items.results.forEach(function(item){
+	//             var col = document.createElement('div')
+	//             col.className = 'col-sm-4'
+	//
+	//             var dropDown = document.createElement('select')
+	//             dropDown.className = 'form-control'
+	//
+	//
+	//
+	//             document.querySelector('#searchResults').appendChild(col)
+	//         })
+	//     })
+	//
+	//
+	//
+	//
+	//
+
+
+	// var a = '/api/v1/games';
+	//
+	// a.forEach(function(element) {
+	//     console.log(element);
+	// });
 
 /***/ },
 /* 1 */
@@ -4127,172 +4283,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var AddNewPlayers = function (_React$Component) {
-	  _inherits(AddNewPlayers, _React$Component);
-
-	  function AddNewPlayers(props) {
-	    _classCallCheck(this, AddNewPlayers);
-
-	    var _this = _possibleConstructorReturn(this, (AddNewPlayers.__proto__ || Object.getPrototypeOf(AddNewPlayers)).call(this, props));
-
-	    _this.sendInvite = _this.sendInvite.bind(_this);
-	    _this.handleChange = _this.handleChange.bind(_this);
-	    _this.state = {
-	      prospect: ''
-	    };
-	    return _this;
-	  }
-
-	  _createClass(AddNewPlayers, [{
-	    key: 'handleChange',
-	    value: function handleChange(event) {
-	      this.setState({ prospect: event.target.value });
-	    }
-	  }, {
-	    key: 'sendInvite',
-	    value: function sendInvite(e) {
-	      var _this2 = this;
-
-	      fetch('/api/v1/invite', {
-	        body: JSON.stringify({
-	          email: this.state.prospect
-	        }),
-	        credentials: 'same-origin',
-	        method: 'POST',
-	        headers: {
-	          'Content-Type': 'application/json'
-	        }
-	      }).then(function (response) {
-	        return response.json();
-	      }).then(function (response) {
-	        console.log(response);
-	        alert('We have sent an invite to ' + _this2.state.prospect);
-	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'col-sm-8 col-sm-offset-2 addNewPlayerRow' },
-	          _react2.default.createElement(
-	            'label',
-	            { className: 'addnewinput shadow' },
-	            'Email Address: ',
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('input', { type: 'text', value: this.state.prospect, onChange: this.handleChange })
-	          ),
-	          _react2.default.createElement('input', { type: 'button', value: 'Send Invite', className: 'btn btn-success', onClick: this.sendInvite })
-	        )
-	      );
-	    }
-	  }]);
-
-	  return AddNewPlayers;
-	}(_react2.default.Component);
-
-	exports.default = AddNewPlayers;
-
-	// import React, { Component } from 'react'
-	// //I am using class to define this component.
-	// class AddNewPlayers extends Component {
-	//     constructor(props) {
-	//         super(props)
-	//         this.typing = this.typing.bind(this)
-	//         this.enter = this.enter.bind(this)
-	//         this.click = this.click.bind(this)
-	//         this.state = {
-	//             newPlayer: '',
-	//             players: []
-	//         } //this sets it so there is no data loaded in when opening the page. I added a value within the newPlayer string and it gave the input field a default value
-	//     }
-	//     typing(e) {
-	//         this.setState({
-	//             newPlayer: e.target.value
-	//         })
-	//     }
-	//     enter(e) {
-	//         if (e.key === 'Enter' && e.target.value !== '') {
-	//             let newPlayers = this.state.player
-	//
-	//             newPlayers.push({
-	//                 text: e.target.value
-	//             })
-	//             this.setState({
-	//                 newPlayer: '',
-	//                 players: newPlayers
-	//             })
-	//         }
-	//     }
-	//     click(e) {
-	//         if (e.target.value !== '') {
-	//             let newPlayers = this.state.player
-	//
-	//             newPlayers.push({
-	//                 text: e.target.value
-	//             })
-	//
-	//             this.setState({
-	//                 newPlayer: '',
-	//                 players: newPlayers
-	//             })
-	//     }}
-	//
-	//     render() {  var player = 1;
-	//      var value
-	//      function add_fields() {
-	//          player++;
-	//          var addToList = document.getElementById('addPlayers')
-	//          var addingplayerline = document.createElement("div");
-	//          addingplayerline.innerHTML = '<div class="form-group"> Add Player ' + player +':</div><div class="content addNewPlayerRow"><span><input type="email" class="addNewPlayerRow" name="newplayeremailaddress" placeholder="newplayer@funnymail.com" value="" /></span></div>';
-	//
-	//     addToList.appendChild(addingplayerline)
-	//         return <div className="row">
-	//             <div className ="col-sm-8 col-sm-offset-2">
-	//                 <div class="form-group"> Add Player ' + player +':</div><div class="content addNewPlayerRow"><span><input type="email" class="addNewPlayerRow" name="newplayeremailaddress" placeholder="newplayer@funnymail.com" value="" /></span></div>
-	//                 <button type="button" className="btn btn-default" id="sendNewUserEmail" action>Submit</button>
-	//             </div>
-	//         {/* <div className="col-sm-6">
-	//             <input type="text" className="form-control" value={this.state.newPlayer} onChange={this.typing} onKeyPress={this.enter}  />
-	//                 <div className="text-center button">
-	//                 <button value={this.state.newPlayer} className="btn btn-success" onClick={this.click} onChange={this.typing} type="button" id="addBtn">Add to my list</button>
-	//                 </div>
-	//             </div>
-	//             <ul className="col-sm-6">
-	//             {TodoItems}
-	//             </ul>
-	//             </div> */}
-	//         }}
-	//
-	// export default AddNewPlayers
-
-/***/ },
+/* 32 */,
 /* 33 */
 /***/ function(module, exports, __webpack_require__) {
 

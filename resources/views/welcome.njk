@@ -5,16 +5,20 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h3 class="text-center">Welcome to YesAnd</h3>
-                <p class="text-center"><a href="/playeredit">Click here to view and edit your credentials</a></p>
+            <div class="col-sm-12 shadowtext">
+                <img id="backgroundimagewelcomescreen" src="/assets/welcomescreen.jpg" border="0" alt="">
+                <h1 class="text-center">Welcome to YesAnd!</h1>
+                <p class="text-center shadowtext"><a href="/playeredit">Click here to view and edit your credentials</a></p>
+                {% if currentUser.director %}
+                <p class="text-center shadowtext"><a href="/playersedit">Click here to view and edit your team</a></p>
+                {% endif %}
             </div>
         </div>
     </div>
-    
 
-    {% if currentUser.director %}
-    <div class="container-fluid">
+
+
+    {# <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3" id="editPlayersMenu">
                 <div>
@@ -41,8 +45,8 @@
                 </dl>
             </div>
         </div>
-    </div>
+    </div> #}
 
-    {% endif %}
+
 <script type="text/javascript" src="/js/welcome.js"></script>
 {% endblock %}

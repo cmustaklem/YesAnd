@@ -3,21 +3,25 @@
 const Lucid = use('Lucid')
 
 class User extends Lucid {
-    apiTokens () {
-        return this.hasMany('App/Model/Token')
-    }
-    teams () {
-        return this.belongsTo('App/Model/Team')
-    }
-    show_user () {
-        return this.belongsTo('App/Model/ShowUser')
-    }
-    show_game () {
-        return this.belongsTo('App/Model/ShowGame')
-    }
-    teams () {
-        return this.hasMany('App/Model/Team')
-    }
+  static get hidden () {
+    return ['password']
+  }
+
+  token() {
+    return this.hasOne('App/Model/Token')
+  }
+
+  team() {
+    return this.belongsTo('App/Model/Team')
+  }
+
+  shows() {
+    return this.hasManyThrough('App/Model/Show', 'App/Model/ShowUser')
+  }
+
+  games() {
+    return this.hasManyThrough('App/Model/Game', 'App/Model/ShowGame')
+  }
 }
 
 module.exports = User

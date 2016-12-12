@@ -3,9 +3,11 @@ import React from 'react'
 class AddNewPlayers extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {prospect: ''};
-    this.sendInvite = this.sendInvite.bind(this)
+    this.sendInvite = this.sendInvite.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      prospect: ''
+    }
   }
 
   handleChange(event) {
@@ -35,8 +37,8 @@ class AddNewPlayers extends React.Component {
       <div className="row">
         <div className="col-sm-8 col-sm-offset-2 addNewPlayerRow">
 
-          <label>
-            Email Address:
+          <label className="addnewinput shadow">
+            Email Address: <br />
             <input type="text" value={this.state.prospect} onChange={this.handleChange} />
           </label>
           <input type="button" value="Send Invite" className="btn btn-success" onClick={this.sendInvite} />

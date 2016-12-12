@@ -1,12 +1,12 @@
 module.exports = {
   entry: {
-    gameAdd: './public/js/gameAdd.js',
     newGame: './public/js/newGame.js',
     newUser: './public/js/newUser.js',
     newTeam: './public/js/newTeam.js',
     newSound: './public/js/newSound.js',
     playerInvite: './public/js/playerInvite.js',
     addNewProspects: './public/js/addNewProspects.js',
+    gameList: './public/js/gameList.js',
   },
   output: {
     path: './public/js/',

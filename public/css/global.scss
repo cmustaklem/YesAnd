@@ -3,7 +3,7 @@ html, body{height:100%; font-family: 'Lato', sans-serif;}
 * { box-sizing: border-box; }
 
 #topMenu {
-    background-color: #3F51B5;
+    background-color: #9E9E9E;
     color: white;
     display: inline-block;
     font-size: 20px;
@@ -29,8 +29,8 @@ html, body{height:100%; font-family: 'Lato', sans-serif;}
 #subMenu {
     padding-left: 4.7vw;
     margin-top: -10px;
-    background-color: #7986CB;
-    color: white;
+    background-color: #E0E0E0;
+    color: black;
     display: inline-block;
     font-size: 15px;
     text-decoration: none;
@@ -89,6 +89,7 @@ form {
 
 .addNewPlayerRow {
   width: 80%;
+  margin-top: 30px;
 }
 
 .playerArrangement {
@@ -99,6 +100,39 @@ form {
     border: 1px solid gray;
 }
 
+.borderaddnewplayer {
+  padding-right: 1px solid gray;
+}
+
+.shadowtext {
+  h1 {
+    font-size: 50px;
+  }
+  p {
+    padding-top: 0px;
+  }
+  padding-top: 40px;
+  color: white;
+  text-shadow: -0.75px 0 black, 0 0.75px black, 0.75px 0 black, 0 -0.75px black;
+  a {
+    color: white;
+    font-size: 20px;
+  }
+  a:hover {
+      text-decoration: underline !important
+  }
+
+}
+
+.cast {
+	float: left;
+	width: 50%;
+  box-sizing: border-box;
+  color: gray;
+  padding: 10px;
+  flex: 1 0 25%;
+  margin-left: 7px;
+}
 
 #newGameForm {
   margin-top: 30px;
@@ -106,6 +140,10 @@ form {
   // margin:0 auto;
   // vertical-align: middle;
   // float: none;
+}
+
+#gameDropDown {
+  margin-top: 29.25px;
 }
 
 #gameDropDownMenu {
@@ -123,7 +161,7 @@ form {
 }
 
 #newGameTable {
-  margin-top: 29.25px;
+  margin-top: 0px;
 }
 
 #newSoundForm {
@@ -158,4 +196,17 @@ form {
 #deleteGame {
   border-radius: 50%;
   margin-top: 40px;
+}
+
+#backgroundimagewelcomescreen {
+  height: auto;
+  left: 0;
+  margin: 0;
+  min-height: 100%;
+  min-width: 674px;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }

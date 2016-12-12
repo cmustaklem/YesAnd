@@ -3,11 +3,12 @@
 const Lucid = use('Lucid')
 
 class Sound extends Lucid {
-    games () {
-        return this.hasMany('App/Model/Game')
+    game() {
+        return this.belongsTo('App/Model/Game')
     }
-    teams () {
-        return this.hasMany('App/Model/Team')
+
+    team() {
+        return this.belongsTo('App/Model/Team')
     }
 }
 
