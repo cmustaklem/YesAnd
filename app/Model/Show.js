@@ -4,11 +4,11 @@ const Lucid = use('Lucid')
 
 class Show extends Lucid {
     games() {
-        return this.belongsToMany('App/Model/Game', 'show_game')
+        return this.belongsToMany('App/Model/Game', 'show_games')
     }
 
     users() {
-        return this.belongsToMany('App/Model/User', 'show_user')
+        return this.belongsToMany('App/Model/User', 'show_users')
     }
 
     team() {

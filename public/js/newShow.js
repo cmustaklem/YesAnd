@@ -44,7 +44,7 @@ function postFirstHalfOfShow() {
       console.log(castListIds)
 
     })
-    console.log(castList)
+    // console.log(castList)
 
 
     if(show_date && show_location && castListIds.length){
@@ -63,6 +63,7 @@ function postFirstHalfOfShow() {
             return response.json()
         })
         .then(function(response) {
+            var showId = response.id
             var showUsers = []
 
             castListIds.forEach(function (castListID) {
@@ -74,7 +75,7 @@ function postFirstHalfOfShow() {
                     },
                     body: JSON.stringify({
                         user_id: castListID,
-                        show_id: response.id
+                        show_id: showId
                     })
                 })
                 .then(function(response) {
@@ -84,7 +85,7 @@ function postFirstHalfOfShow() {
                     showUsers.push(response)
 
                     if (showUsers.length === castListIds.length) {
-                        window.location.href = '/newshowgames/' + response.id
+                        window.location.href = '/newshowgames/' + showId
                     }
                 })
             })

@@ -21,39 +21,60 @@ fetch('/api/v1/games', {
     })
 })
 
-var showID = window.location.href.split('/')[4]
 
-fetch('/api/v1/show_user', {
+
+fetch('/api/v1/shows/' + showID, {
     credentials: 'same-origin'
 })
 .then(response => response.json())
-.then(function(items){
-    items.forEach(function(item){
+
+.then(function(show){
+        console.log(show)
+    show.users.forEach(function(user){
         // col.appendChild(card)
         var div = document.createElement('div')
         var label = document.createElement('label')
         div.classList = 'playerArrangement';
         label.htmlFor = 'checkbox-id';
         label.classList = 'bold';
-        label.appendChild(document.createTextNode(item.user_id));
+        label.appendChild(document.createTextNode(user.first_name + ' ' + user.last_name));
         var checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.value = item.id;
+        checkbox.value = user.id;
         div.appendChild(checkbox);
         div.appendChild(label);
         document.querySelector('#inlineCheckbox2').appendChild(div)
-        console.log(item.id)
+        // console.log(item.id)
     })
 })
+
+
 
 document.getElementById('addGameShow').addEventListener('click', function() {
 
     postGameDetails()
 })
-// document.getElementById('addGameShow').addEventListener('click', function() {
-//
-//     createGameListItem()
-// })
+
+function postGameDetails() {
+    daGame = document.getElementById('gameListing').value;
+    var castList = document.querySelectorAll('input[type=checkbox]')
+    var castListIds = []
+
+
+
+    castListIds.forEach(function(castMember) {
+        if (castMember.checked === true) {
+            var castIDNumber = Number(castMember.value)
+            castListIds.push(castIDNumber)
+        }
+        else {
+            console.log('its not working yo!')
+        }
+     })
+     console.log(daGame)
+     console.log(castListIds)
+     createGameListItem()
+}
 
 function createGameListItem() {
     var form = document.createElement('form')
@@ -76,21 +97,4 @@ function createGameListItem() {
     var li = document.createElement('li')
     // li.innerHTML = item.first_name + ' ' + item.last_name
     row.appendChild(li)
-}
-
-function postGameDetails() {
-    daGame = document.getElementById('gameListing').value;
-    var castList = document.querySelectorAll('input[type=checkbox]')
-    var castListIds = []
-
-    castList.forEach(function(castMember) {
-        if (castMember.checked === true) {
-            var castIDNumber = Number(castMember.value)
-            castListIds.push(castIDNumber)
-        }
-        // else {
-        //     console.log('its not working yo!')
-        // }
-     })
-     createGameListItem()
 }

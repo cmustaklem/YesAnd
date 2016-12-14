@@ -33,8 +33,8 @@ class ShowController {
       const gamePlayers = yield User
         .query()
         .select('first_name', 'last_name', 'game_id', 'users.id')
-        .join('show_game', 'show_game.user_id', 'users.id')
-        .whereIn('show_game.game_id', gameIds)
+        .join('show_games', 'show_games.user_id', 'users.id')
+        .whereIn('show_games.game_id', gameIds)
 
       show.games = show.games.map(game => {
         game.users = []
