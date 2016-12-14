@@ -65,16 +65,20 @@ Route.group('authenticated', function() {
     yield response.sendView('newShow')
   })
 
-  Route.get('/newshowgames', function * (request, response) {
-    yield response.sendView('newShow2')
+  Route.get('/newshowgames/:id', function * (request, response) {
+    yield response.sendView('newshow2', {showId: request.param('id')})
   })
 
   Route.get('/shows', function * (request, response) {
     yield response.sendView('showlist')
   })
 
-  Route.get('/shows/:id', function * (request, response) {
-    yield response.sendView('shows', {showId: request.param('id')})
+    // Route.get('/shows/:id', function * (request, response) {
+    //   yield response.sendView('shows', {showId: request.param('id')})
+    // })
+
+  Route.get('/newshowgames/:id', function * (request, response) {
+    yield response.sendView('shows', {show_id: request.param('id')})
   })
 
   Route.get('/newgame', function * (request, response) {
@@ -99,5 +103,13 @@ Route.group('authenticated', function() {
 
   Route.get('/addnewplayer', function * (request, response) {
     yield response.sendView('addNewPlayer')
+  })
+
+  Route.get('/thankyougame', function * (request, response) {
+    yield response.sendView('thankYouGame')
+  })
+
+  Route.get('/thankyoushow', function * (request, response) {
+    yield response.sendView('thankYouShow')
   })
 }).middleware('auth')

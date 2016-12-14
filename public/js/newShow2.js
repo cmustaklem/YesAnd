@@ -1,4 +1,6 @@
-fetch('api/v1/games', {
+var daGame = ''
+
+fetch('/api/v1/games', {
     credentials: 'same-origin'
 })
 
@@ -19,194 +21,76 @@ fetch('api/v1/games', {
     })
 })
 
+var showID = window.location.href.split('/')[4]
 
+fetch('/api/v1/show_user', {
+    credentials: 'same-origin'
+})
+.then(response => response.json())
+.then(function(items){
+    items.forEach(function(item){
+        // col.appendChild(card)
+        var div = document.createElement('div')
+        var label = document.createElement('label')
+        div.classList = 'playerArrangement';
+        label.htmlFor = 'checkbox-id';
+        label.classList = 'bold';
+        label.appendChild(document.createTextNode(item.user_id));
+        var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = item.id;
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        document.querySelector('#inlineCheckbox2').appendChild(div)
+        console.log(item.id)
+    })
+})
 
+document.getElementById('addGameShow').addEventListener('click', function() {
 
-
-
-
-// function addText(){
-//     var input = document.getElementById('inputTask').value;
-//     var node=document.createElement("p");
-//     var textnode=document.createTextNode(input);
-//     node.appendChild(textnode);
-//     document.getElementById('addTask').appendChild(node);
+    postGameDetails()
+})
+// document.getElementById('addGameShow').addEventListener('click', function() {
 //
-//     var removeTask = document.createElement('input');
-//     removeTask.setAttribute('type', 'button');
-//     removeTask.setAttribute("value", "Remove");
-//     removeTask.setAttribute("id", "removeButton");
-//     removeTask.addEventListener('click', function(e) {
-//         node.parentNode.removeChild(node);
-//     }, false);
-//     node.appendChild(removeTask);
-//
-//
-// }
-
-
-// fetch('api/v1/users', {
-//     credentials: 'same-origin'
+//     createGameListItem()
 // })
-//
-// // var checkbox = document.createElement('input');
-// // checkbox.type = 'checkbox';
-// // checkbox.name = item.first_name + ' ' + item.last_name;
-// // checkbox.value = item.first_name + ' ' + item.last_name;
-//
-//
-//
-// .then(response => response.json()) //response.json parses the data
-// // .then(response => listPlanets(response.results))
-// .then(function(items){
-//     items.forEach(function(item){
-//         // col.appendChild(card)
-//         // var col = document.createElement('label')
-//         // var players = document.createElement('checkbox-inline')
-//         // players.innerHTML = item.first_name + ' ' + item.last_name
-//         // col.appendChild(players)
-//         var div = document.createElement('div')
-//         var label = document.createElement('label')
-//         div.classList = 'playerArrangement';
-//         label.htmlFor = 'checkbox-id';
-//         label.classList = 'bold';
-//         label.appendChild(document.createTextNode(item.first_name + ' ' + item.last_name));
-//         var checkbox = document.createElement('input');
-//         checkbox.type = 'checkbox';
-//         checkbox.name = item.first_name + ' ' + item.last_name;
-//         checkbox.value = item.first_name + ' ' + item.last_name;
-//         checkbox.classList = 'checkbox-inline';
-//         div.appendChild(checkbox);
-//         div.appendChild(label);
-//
-//         document.querySelector('#inlineCheckbox1').appendChild(div)
-//     })
-// })
-//
-// document.getElementById('addNewShowPart1').addEventListener('click', function() {
-//
-//     postFirstHalfOfShow()
-// })
-//
-// function postFirstHalfOfShow() {
-//     var show_date = document.getElementById('show_date').value
-//     var show_location = document.getElementById('show_location').value
-//     var cast = document.getElementById('addNewShowPart1')
-//
-//
-//     if(show_date && show_location && cast){
-//         fetch('/api/v1/shows', {
-//             method: 'post',
-//             credentials: 'same-origin',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify({
-//                 date: show_date,
-//                 location: show_location
-//             })
-//         })
-//         // .then(function(response) {
-//         //     return response.json()
-//         // })
-//         // .then(function(response) {
-//         //     fetch('/api/v1/show_user', {
-//         //         method: 'post',
-//         //         headers: {
-//         //             'Content-Type': 'application/json'
-//         //         },
-//         //         body: JSON.stringify({
-//         //             user_id: cast
-//         //         })
-//         //     })
-//         //     .then(function(response) {
-//         //         if (response.status >= 200 && response.status <= 400) {
-//         //             return response.json()
-//         //         }
-//         //         else {
-//         //             alert(response.body)
-//         //         }
-//         //     })
-//         //     .then(function(response) {
-//         //         window.location.href = '/home'
-//         //     })
-//         // })
-//     }
-//
-// }
-//         // .then(function(response) {
-//         //     fetch('/api/v1/users', {
-//         //         method: 'post',
-//         //         headers: {
-//         //             'Content-Type': 'application/json'
-//         //         },
-//         //         body: JSON.stringify({
-//         //             first_name: firstname,
-//         //             last_name: lastname,
-//         //             phone_number: phonenumber,
-//         //             email: emailaddress,
-//         //             password: password,
-//         //             team_id: response.id,
-//         //             director: 'true'
-//         //         })
-//         //     })
-//             // .then(function(response) {
-//             //     if (response.status >= 200 && response.status <= 400) {
-//             //         return response.json()
-//             //     }
-//             //     else {
-//             //         alert(response.body)
-//             //     }
-//             // })
-//             // .then(function(response) {
-//             //     window.location.href = '/home'
-//             // })
-//
-//
-//
-//
-//
-//
-//     // if(show_date && show_location && cast) {
-//     //     fetch('/api/v1/shows', {
-//     //         method: 'post',
-//     //         credentials: 'same-origin',
-//     //         headers: {
-//     //             'Content-Type': 'application/json'
-//     //         },
-//     //         body: JSON.stringify({
-//     //             date: firstname,
-//     //             location: lastname
-//     //         })
-//     //     })
-//     //     .then(function(response) {
-//     //         if (response.status >= 200 && response.status <= 400) {
-//     //             return response.json()
-//     //         }
-//     //         else {
-//     //             alert('Error.')
-//     //             return false
-//     //         }
-//     //     })
-//     //     .then(function(response) {
-//     //         if (response !== false) {
-//     //             window.location.href = '/playerhome'
-//     //         }
-//     //     })
-//     // }
-//
-//     // fetch('/api/v1/shows', {
-//     //     method: 'post',
-//     //     credentials: 'same-origin',
-//     //     headers: {
-//     //         'Content-Type': 'application/json'
-//     //     },
-//     //     body: JSON.stringify({
-//     //         first_name: firstname,
-//     //         last_name: lastname,
-//     //         phone_number: phonenumber,
-//     //         email: emailaddress,
-//     //         password: password,
-//     //         team_id: window.location.href.split('?')[1].replace('team_id=', '').split('#')[0]
-//     //     })
-//     // })
+
+function createGameListItem() {
+    var form = document.createElement('form')
+    form.className = 'shadow'
+    var div = document.createElement('div')
+    div.className = 'panel-body'
+    form.appendChild(div)
+    var row = document.createElement('div')
+    row.className = 'row'
+    form.appendChild(row)
+    var title = document.createElement('div')
+    title.className = 'col-sm-3'
+    title.innerHTML = '<h2>' + daGame + '</h2>'
+    row.appendChild(title)
+    var castPlayers = document.createElement('div')
+    castPlayers.className = 'col-sm-9'
+    row.appendChild(castPlayers)
+    var ul = document.createElement('ul')
+    row.appendChild(ul)
+    var li = document.createElement('li')
+    // li.innerHTML = item.first_name + ' ' + item.last_name
+    row.appendChild(li)
+}
+
+function postGameDetails() {
+    daGame = document.getElementById('gameListing').value;
+    var castList = document.querySelectorAll('input[type=checkbox]')
+    var castListIds = []
+
+    castList.forEach(function(castMember) {
+        if (castMember.checked === true) {
+            var castIDNumber = Number(castMember.value)
+            castListIds.push(castIDNumber)
+        }
+        // else {
+        //     console.log('its not working yo!')
+        // }
+     })
+     createGameListItem()
+}

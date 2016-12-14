@@ -18,7 +18,6 @@ function loginHandler() {
 
   var email = document.querySelector('#emailAddressLogin').value
   var password = document.querySelector('#passwordLogin').value
-  console.log(email, password)
 
 
 //we will need to make a new route api/v1/auth 1. attempt login 2. return user or return user 3.

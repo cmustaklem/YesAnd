@@ -11,21 +11,12 @@
     <div class="container">
         <div id="newgame">
             <div class="row">
-                <div class="col-sm-3">
-                    <select class="form-control" id="gameDropDownMenu" name="gameDropDownMenu">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="col-sm-9" id="newGameForm">
+                <div class="col-sm-12" id="newGameForm">
                     <form>
                         <input type="text" id="gameName" class="form-control" placeholder="Game Name"><br>
                         <textarea id="gameDescription" class="form-control" rows="3" placeholder="Game Description"></textarea><br>
                         <input type="text" id="gameSuggestion" class="form-control" placeholder="Game Suggestion"><br>
-                        <button type="button" id="gameSubmit" class="btn btn-default" href="/gamelist">Submit</button>
+                        <button type="button" id="gameSubmit" class="btn btn-default" onclick="myFunction()">Submit</button>
                     </form>
                 </div>
             </div>
