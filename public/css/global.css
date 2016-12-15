@@ -16,7 +16,7 @@ main {
   color: white;
   display: inline-block;
   font-size: 20px;
-  height: 10vh;
+  min-height: 10vh;
   padding: 10px;
   width: 100vw;
 }
@@ -40,10 +40,11 @@ main {
 
 #subMenu {
   padding-left: 4.7vw;
+  min-height: 7vh;
   margin-top: -10px;
   background-color: #E0E0E0;
   color: black;
-  display: inline-block;
+  padding-top: 14px;
   font-size: 15px;
   text-decoration: none;
 }
@@ -279,4 +280,30 @@ form {
   width: 100%;
   z-index: -1;
   background-size: cover;
+}
+
+#newShowButton {
+  margin-left: -98px;
+}
+
+#addNewPlayer {
+  margin-left: -196px;
+}
+
+@media screen and (max-width: 768px) {
+  #newShowButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #addNewPlayer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #newGameButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
