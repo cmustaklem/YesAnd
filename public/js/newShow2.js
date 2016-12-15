@@ -53,7 +53,7 @@ fetch('/api/v1/shows/' + showID, {
         console.log(game)
         var cast = game.users.map(function(user) {
             return '<li>' + user.first_name + ' ' + user.last_name + '</li>'
-        })
+        }).join('')
 
         document.getElementById('existingGameTable').innerHTML += `
         <div class="panel-body">

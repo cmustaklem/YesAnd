@@ -6,7 +6,7 @@ const User = use('App/Model/User')
 class ShowController {
 
   * index(request, response) {
-      const shows = yield Show.all()
+      const shows = yield Show.query().orderBy('date', 'desc').fetch()
       response.json(shows)
   }
 
@@ -43,6 +43,7 @@ class ShowController {
         .query()
         .select('first_name', 'last_name', 'game_id', 'users.id')
         .join('show_games', 'show_games.user_id', 'users.id')
+        .where('show_games.show_id', show.id)
         .whereIn('show_games.game_id', gameIds)
 
       show.games = show.games.map(game => {

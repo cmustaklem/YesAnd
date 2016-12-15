@@ -1,27 +1,32 @@
 {% extends 'layouts.layout' %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 shadowtext">
-            <div class="row">
-                <img id="backgroundimagewelcomescreen" src="/assets/pastshows.jpg" border="0" alt="">
-                <h1 class="text-center">Past Show Database</h1>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <ul id="pastShowDropDownList" class="list-unstyled">
-                        {# <li><a href="/show/show.id">White Rabbit 12/9/2016</a></li>
-                        <li><a href="/show/show.id">Theatre on the Square 12/8/2016</a></li>
-                        <li><a href="/show/show.id">Stone's Throw 12/2/2016</a></li>
-                        <li><a href="/show/show.id">Terre Haute 11/8/2016</a></li>
-                        <li><a href="/show/show.id">White Rabbit 11/9/2016</a></li>
-                        <li><a href="/show/show.id">Shoefly 11/7/2016</a></li> #}
-                    </ul>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 shadowtext">
+                <div class="row">
+                    <h1 class="text-center">Show Database</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="/assets/showspage.png" alt="Laugh at Yourself">
+                    </div>
+                    <div class="col-sm-6">
+                        <ul id="pastShowDropDownList" class="list-unstyled text-center">
+                            {# <li><a href="/show/show.id">White Rabbit 12/9/2016</a></li>
+                            <li><a href="/show/show.id">Theatre on the Square 12/8/2016</a></li>
+                            <li><a href="/show/show.id">Stone's Throw 12/2/2016</a></li>
+                            <li><a href="/show/show.id">Terre Haute 11/8/2016</a></li>
+                            <li><a href="/show/show.id">White Rabbit 11/9/2016</a></li>
+                            <li><a href="/show/show.id">Shoefly 11/7/2016</a></li> #}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</main>
+
 <script type="text/javascript" src="/js/showList.js"></script>
 {% endblock %}

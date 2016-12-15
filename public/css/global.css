@@ -7,6 +7,10 @@ html, body {
   box-sizing: border-box;
 }
 
+main {
+  background: linear-gradient(white, #EDEEF0);
+}
+
 #topMenu {
   background-color: #9E9E9E;
   color: white;
@@ -105,11 +109,11 @@ form {
 }
 
 .playerArrangement {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 .playerArrangement2 {
-  margin-left: 49px;
+  margin-left: 50px;
 }
 
 .selectpicker {
@@ -128,6 +132,10 @@ form {
   padding-top: 40px;
   color: white;
   text-shadow: -0.75px 0 black, 0 0.75px black, 0.75px 0 black, 0 -0.75px black;
+}
+
+.shadowtext img {
+  width: 100%;
 }
 
 .shadowtext h1 {
@@ -161,10 +169,6 @@ form {
   margin-left: -28px;
   padding-top: 0px;
   padding-right: 50px;
-}
-
-.columnFlex {
-  width: 25%;
 }
 
 .divflexcolumn {
@@ -260,6 +264,7 @@ form {
 
 #addNewShowComplete {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #thankYouGame {

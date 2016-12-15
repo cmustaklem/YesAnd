@@ -2,6 +2,10 @@ html, body{height:100%; font-family: 'Lato', sans-serif;}
 
 * { box-sizing: border-box; }
 
+main {
+    background: linear-gradient(white, #EDEEF0);
+}
+
 #topMenu {
     background-color: #9E9E9E;
     color: white;
@@ -97,11 +101,11 @@ form {
 }
 
 .playerArrangement {
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .playerArrangement2 {
-    margin-left: 49px;
+    margin-left: 50px;
 }
 
 .selectpicker {
@@ -117,6 +121,9 @@ form {
 }
 
 .shadowtext {
+  img {
+    width: 100%;
+  }
   h1 {
     font-size: 50px;
   }
@@ -152,9 +159,9 @@ form {
     padding-right: 50px;
 }
 
-.columnFlex {
-  width: 25%;
-}
+// .columnFlex {
+//   width: 25%;
+// }
 
 .divflexcolumn {
     -moz-column-count: 4;
@@ -252,6 +259,7 @@ form {
 
 #addNewShowComplete {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #thankYouGame {
@@ -266,6 +274,12 @@ form {
   width: 100%;
   z-index: -1;
   background-size: cover;
+}
+
+#pastShowDropDownList {
+  // li {
+  //   columns: 3
+  // }
 }
 
 // #inlineCheckbox1 {

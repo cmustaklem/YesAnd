@@ -36,6 +36,7 @@ function postNewUserInfo() {
         .then(function(response) {
             fetch('/api/v1/users', {
                 method: 'post',
+                credentials: 'same-origin',
                 headers: {
                     'Content-Type': 'application/json'
                 },

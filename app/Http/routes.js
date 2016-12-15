@@ -45,15 +45,15 @@ Route.get('/newuser', function * (request, response) {
 
 //Authenticated routes
 Route.group('v1', function () {
-  Route.post('/invite', 'UserController.invite')
+  Route.post('/invite', 'UserController.invite').middleware('auth')
   Route.resource('/users', 'UserController')
-  Route.resource('/games', 'GameController')
-  Route.resource('/shows', 'ShowController')
-  Route.resource('/sounds', 'SoundController')
   Route.resource('/teams', 'TeamController')
-  Route.resource('/show_games', 'ShowGameController')
-  Route.resource('/show_users', 'ShowUserController')
-}).prefix('/api/v1').middleware('auth')
+  Route.resource('/games', 'GameController').middleware('auth')
+  Route.resource('/shows', 'ShowController').middleware('auth')
+  Route.resource('/sounds', 'SoundController').middleware('auth')
+  Route.resource('/show_games', 'ShowGameController').middleware('auth')
+  Route.resource('/show_users', 'ShowUserController').middleware('auth')
+}).prefix('/api/v1')
 
 Route.group('authenticated', function() {
 
@@ -66,7 +66,7 @@ Route.group('authenticated', function() {
   })
 
   Route.get('/show/:id', function * (request, response) {
-    yield response.sendView('currentShow', {show_id: request.param('id')})
+    yield response.sendView('currentShow', {showId: request.param('id')})
   })
 
   Route.get('/newshowgames/:id', function * (request, response) {

@@ -1,7 +1,6 @@
 fetch('api/v1/users', {
     credentials: 'same-origin'
-})
-
+})  
 
 .then(response => response.json()) //response.json parses the data
 // .then(response => listPlanets(response.results))
