@@ -7,7 +7,7 @@
     {# <div id="gameAdd">
     </div> #}
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-5">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5>Add Game and Casts</h5>
@@ -16,37 +16,17 @@
           <div id="showListOfGames">
             <form class="shadow" action="index.html" method="post" id="newGameTable">
               <div class="panel-body">
-                  <select class="form-control" id="gameListing">
-                  </select>
-                <br>
-
-                  <label class="checkbox" id="inlineCheckbox2">
-                  </label>
-
+                  <select class="form-control" id="gameListing"></select>
+                    <br>
+                  <label class="checkbox" id="inlineCheckbox2"></label>
                 <button class="btn btn-default" type="button" name="button" id="addGameShow">Add to my list</button>
               </div>
             </form>
           </div>
-        </div>
-        <div class="col-sm-9">
-          <form class="shadow" action="index.html" method="post" id="newGameTable">
-            <div class="panel-body">
-              <div class="row">
-                  <div class="col-xs-3">
-                    <h2>Survivor</h2>
-                  </div>
-                  <div class="col-xs-9">
-                    <ul>
-                      <li>Cast Member 1</li>
-                      <li>Cast Member 2</li>
-                      <li>Cast Member 3</li>
-                      <li>Cast Member 4</li>
-                      <li>Cast Member 5</li>
-                      <li>Cast Member 6</li>
-                    </ul>
-                  </div>
-              </div>
-            </div>
+      </div>
+        <div class="col-sm-7">
+          <form class="shadow" action="index.html" method="post" id="existingGameTable">
+
           </form>
           <div class="row">
               <div class="col-sm-12">
@@ -119,6 +99,8 @@
 {# </div>
 </div> #}
 </main>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.min.js" type="text/javascript"></script>
 <script type="text/javascript">var showID = {{showId}}</script>
 <script type="text/javascript" src="/js/newShow2.js"></script>
 {% endblock %}

@@ -29,6 +29,15 @@ class ShowController {
 
     if (show.value().length) {
       show = show.value().pop().toJSON()
+      let existinGameIds = []
+      show.games = show.games.filter(game => {
+          if (!existinGameIds.includes(game.id)) {
+            existinGameIds.push(game.id)
+            return true
+          }
+
+          return false
+      })
       const gameIds = show.games.map(game => game.id)
       const gamePlayers = yield User
         .query()

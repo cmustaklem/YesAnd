@@ -67,7 +67,7 @@ function postFirstHalfOfShow() {
             var showUsers = []
 
             castListIds.forEach(function (castListID) {
-                fetch('/api/v1/show_user', {
+                fetch('/api/v1/show_users', {
                     method: 'post',
                     credentials: 'same-origin',
                     headers: {

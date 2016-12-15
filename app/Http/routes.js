@@ -51,8 +51,8 @@ Route.group('v1', function () {
   Route.resource('/shows', 'ShowController')
   Route.resource('/sounds', 'SoundController')
   Route.resource('/teams', 'TeamController')
-  Route.resource('/show_game', 'ShowGameController')
-  Route.resource('/show_user', 'ShowUserController')
+  Route.resource('/show_games', 'ShowGameController')
+  Route.resource('/show_users', 'ShowUserController')
 }).prefix('/api/v1').middleware('auth')
 
 Route.group('authenticated', function() {
@@ -63,6 +63,10 @@ Route.group('authenticated', function() {
 
   Route.get('/newshow', function * (request, response) {
     yield response.sendView('newShow')
+  })
+
+  Route.get('/show/:id', function * (request, response) {
+    yield response.sendView('currentShow', {showId: request.param('id')})
   })
 
   Route.get('/newshowgames/:id', function * (request, response) {
