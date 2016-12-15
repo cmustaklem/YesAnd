@@ -4188,7 +4188,6 @@
 	      }).then(function (response) {
 	        return response.json();
 	      }).then(function (response) {
-	        console.log(response);
 	        alert('We have sent an invite to ' + _this2.state.prospect);
 	      });
 	    }
@@ -4200,15 +4199,21 @@
 	        { className: 'row' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'col-sm-8 col-sm-offset-2 addNewPlayerRow' },
+	          { className: 'col-lg-6 addNewPlayerRow' },
 	          _react2.default.createElement(
-	            'label',
-	            { className: 'addnewinput shadow' },
-	            'Email Address: ',
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('input', { type: 'text', value: this.state.prospect, onChange: this.handleChange })
-	          ),
-	          _react2.default.createElement('input', { type: 'button', value: 'Send Invite', className: 'btn btn-success', onClick: this.sendInvite })
+	            'div',
+	            { className: 'input-group' },
+	            _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.handleChange, placeholder: 'Search for...' }),
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'input-group-btn' },
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'btn btn-default', onClick: this.sendInvite, type: 'button' },
+	                'Go!'
+	              )
+	            )
+	          )
 	        )
 	      );
 	    }

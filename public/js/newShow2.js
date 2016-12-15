@@ -30,12 +30,12 @@ fetch('/api/v1/shows/' + showID, {
 .then(response => response.json())
 
 .then(function(show){
-        console.log(show)
+    console.log(show)
     show.users.forEach(function(user){
         // col.appendChild(card)
         var div = document.createElement('div')
         var label = document.createElement('label')
-        div.classList = 'playerArrangement';
+        div.classList = 'playerArrangement2';
         label.htmlFor = 'checkbox-id';
         label.classList = 'bold';
         label.appendChild(document.createTextNode(user.first_name + ' ' + user.last_name));
@@ -52,22 +52,26 @@ fetch('/api/v1/shows/' + showID, {
     show.games.forEach(function(game) {
         console.log(game)
         var cast = game.users.map(function(user) {
-            return '<li>' + user.first_name + '</li>'
+            return '<li>' + user.first_name + ' ' + user.last_name + '</li>'
         })
 
         document.getElementById('existingGameTable').innerHTML += `
-            <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-3">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12">
                     <h2>${game.name}</h2>
-                  </div>
-                  <div class="col-xs-9">
-                    <ul>
-                      ${cast}
-                    </ul>
-                  </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-xs-12">
+                        <ul class="list-unstyled theGameCast">
+                            ${cast}
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
         `
     })
 })
@@ -78,46 +82,47 @@ document.getElementById('addGameShow').addEventListener('click', function() {
 })
 
 function getValueUsingClass(){
-	/* declare an checkbox array */
+    /* declare an checkbox array */
     daGame = document.getElementById('gameListing').value;
-	var castListIds = [];
+    var castListIds = [];
     var castMembers = []
 
-	/* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
-	$(".chk:checked").each(function() {
-		castListIds.push($(this).val());
-	});
+    /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+    $(".chk:checked").each(function() {
+        castListIds.push($(this).val());
+    });
 
 
 
-	/* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
-        castListIds.forEach(function(castListID) {
-            fetch('/api/v1/show_games', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                credentials: 'same-origin',
-                body: JSON.stringify({
-                    show_id: showID,
-                    game_id: daGame,
-                    user_id: castListID
-                })
-            })
-            .then(function(response) {
-                return response.json()
-            })
-            .then(function(response) {
-                castMembers.push(response)
-
-                if (castListIds.length === castMembers.length) {
-                    window.location.reload()
-                }
+    /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+    castListIds.forEach(function(castListID) {
+        fetch('/api/v1/show_games', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify({
+                show_id: showID,
+                game_id: daGame,
+                user_id: castListID
             })
         })
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(response) {
+            castMembers.push(response)
 
+            if (castListIds.length === castMembers.length) {
+                window.location.reload()
+            }
+        })
+    })
+}
 
-
+function myFunction() {
+    window.location.href = '/thankyoushow'
 }
 
 
@@ -127,32 +132,32 @@ function getValueUsingClass(){
 //
 // });
 
-    // daGame = document.getElementById('gameListing').value;
-    // var castList = document.querySelectorAll('input[type=checkbox]')
-    // var castListChecked = document.querySelectorAll('input[type=checkbox]:checked')
-    // var castListIds = []
-    // console.log(castListChecked[0].value)
-    //
-    // if (castListChecked[0].checked === true) {
-    //     var castIDNumber = Number(castList.value)
-    //     castListIds.push(castList[0].value)
-    //     console.log(castListIds)
-    // }
-    //
-    // else {
-    //     console.log('HBO')
-    // }
+// daGame = document.getElementById('gameListing').value;
+// var castList = document.querySelectorAll('input[type=checkbox]')
+// var castListChecked = document.querySelectorAll('input[type=checkbox]:checked')
+// var castListIds = []
+// console.log(castListChecked[0].value)
+//
+// if (castListChecked[0].checked === true) {
+//     var castIDNumber = Number(castList.value)
+//     castListIds.push(castList[0].value)
+//     console.log(castListIds)
+// }
+//
+// else {
+//     console.log('HBO')
+// }
 
 
-    // castListIds.forEach(function(castMember) {
-    //
-    //     else {
-    //         console.log('its not working yo!')
-    //     }
-    //  })
-    //  console.log(daGame)
-    // //  console.log(castListIds)
-    //  createGameListItem()
+// castListIds.forEach(function(castMember) {
+//
+//     else {
+//         console.log('its not working yo!')
+//     }
+//  })
+//  console.log(daGame)
+// //  console.log(castListIds)
+//  createGameListItem()
 // }
 
 // function createGameListItem() {

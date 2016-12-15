@@ -66,7 +66,7 @@ Route.group('authenticated', function() {
   })
 
   Route.get('/show/:id', function * (request, response) {
-    yield response.sendView('currentShow', {showId: request.param('id')})
+    yield response.sendView('currentShow', {show_id: request.param('id')})
   })
 
   Route.get('/newshowgames/:id', function * (request, response) {
@@ -81,9 +81,9 @@ Route.group('authenticated', function() {
     //   yield response.sendView('shows', {showId: request.param('id')})
     // })
 
-  Route.get('/newshowgames/:id', function * (request, response) {
-    yield response.sendView('shows', {show_id: request.param('id')})
-  })
+  // Route.get('/newshowgames/:id', function * (request, response) {
+  //   yield response.sendView('shows', {show_id: request.param('id')})
+  // })
 
   Route.get('/newgame', function * (request, response) {
     yield response.sendView('newGame')

@@ -27,7 +27,6 @@ class AddNewPlayers extends React.Component {
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response)
       alert('We have sent an invite to ' + this.state.prospect);
     })
 }
@@ -35,14 +34,13 @@ class AddNewPlayers extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-sm-8 col-sm-offset-2 addNewPlayerRow">
-
-          <label className="addnewinput shadow">
-            Email Address: <br />
-            <input type="text" value={this.state.prospect} onChange={this.handleChange} />
-          </label>
-          <input type="button" value="Send Invite" className="btn btn-success" onClick={this.sendInvite} />
-
+        <div className="col-lg-6 addNewPlayerRow">
+          <div className="input-group">
+            <input type="text" className="form-control" onChange={this.handleChange} placeholder="Search for..." />
+            <span className="input-group-btn">
+              <button className="btn btn-default" onClick={this.sendInvite} type="button">Go!</button>
+            </span>
+          </div>
         </div>
       </div>
     );
@@ -50,6 +48,16 @@ class AddNewPlayers extends React.Component {
 }
 
 export default AddNewPlayers
+
+
+
+
+
+
+
+
+
+
 
 // import React, { Component } from 'react'
 // //I am using class to define this component.

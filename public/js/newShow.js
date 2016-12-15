@@ -11,7 +11,7 @@ fetch('api/v1/users', {
         var label = document.createElement('label')
         div.classList = 'playerArrangement';
         label.htmlFor = 'checkbox-id';
-        label.classList = 'bold';
+        label.className = 'dixflexcolumn';
         label.appendChild(document.createTextNode(item.first_name + ' ' + item.last_name));
         var checkbox = document.createElement('input');
         checkbox.type = 'checkbox';

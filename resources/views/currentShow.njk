@@ -1,6 +1,14 @@
 {% extends 'layouts.layout' %}
 
-<script type="text/javascript" src="/js/currentShow.js"></script>
-<script type="text/javascript">var showID = {{Showid}}</script>
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="theCurrentShow"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/currentShow.js"></script>
+<script type="text/javascript">var showID = {{showId}}</script>
 {% endblock %}
