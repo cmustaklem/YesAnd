@@ -4,6 +4,7 @@ html, body{height:100%; font-family: 'Lato', sans-serif;}
 
 main {
     background: linear-gradient(white, #EDEEF0);
+    height: 100vh;
 }
 
 #topMenu {
@@ -75,6 +76,7 @@ form {
   border: 1px solid grey;
   padding: 15px;
   border-radius: 5px;
+  background: white;
 }
 
 .shadow {
@@ -174,8 +176,8 @@ form {
     column-gap: 20px;
 }
 
-.checkbox {
-
+.showScroll {
+    max-height:500px;
 }
 
 #newGameForm {
@@ -233,9 +235,9 @@ form {
   margin-left: 5vw;
 }
 
-#gameDescription {
-    margin-top: 29.25px;
-}
+// #gameDescription {
+//     margin-top: 29.25px;
+// }
 
 #deleteGame {
   border-radius: 50%;
@@ -286,6 +288,15 @@ form {
   margin-left: -196px;
 }
 
+#pastShowDropDownList {
+  color: black;
+  text-shadow: -0.75px 0 white, 0 0.75px white, 0.75px 0 white, 0 -0.75px white;
+  overflow: scroll;
+  height: 800px;
+  padding-top: 20px;
+  margin-left: -100px;
+}
+
 @media screen and (max-width: 768px) {
         #newShowButton {
           display: block;
@@ -303,3 +314,31 @@ form {
           margin-right: auto;
         }
     }
+
+    @media screen and (max-width: 555px) {
+            #pastShowDropDownList {
+              padding-left: 45px;
+              margin-left: 0px;
+            }
+            #showspageimagemobile {
+              img {
+                min-width: 100%;
+                max-height: 350px;
+              }
+            }
+            #newShowButton {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            #addNewPlayer {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            #newGameButton {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+        }
