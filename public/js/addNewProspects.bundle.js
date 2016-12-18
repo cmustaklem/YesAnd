@@ -4203,14 +4203,14 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'input-group' },
-	            _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.handleChange, placeholder: 'Search for...' }),
+	            _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.handleChange, placeholder: 'Email Address' }),
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'input-group-btn' },
 	              _react2.default.createElement(
 	                'button',
 	                { className: 'btn btn-default', onClick: this.sendInvite, type: 'button' },
-	                'Go!'
+	                'Reach out!'
 	              )
 	            )
 	          )

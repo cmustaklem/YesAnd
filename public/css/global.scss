@@ -101,6 +101,7 @@ form {
 .addNewPlayerRow {
   width: 80%;
   margin-top: 30px;
+  margin-left: 60px;
 }
 
 .dixflexcolumn {
@@ -318,23 +319,23 @@ form {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 768px) {
-        #newShowButton {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        #addNewPlayer {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        #newGameButton {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
-    }
+// @media screen and (max-width: 768px) {
+//         #newShowButton {
+//           display: block;
+//           margin-left: auto;
+//           margin-right: auto;
+//         }
+//         #addNewPlayer {
+//           display: block;
+//           margin-left: auto;
+//           margin-right: auto;
+//         }
+//         #newGameButton {
+//           display: block;
+//           margin-left: auto;
+//           margin-right: auto;
+//         }
+//     }
 
     @media screen and (max-width: 555px) {
             #pastShowDropDownList {

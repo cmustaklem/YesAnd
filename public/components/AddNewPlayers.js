@@ -36,9 +36,9 @@ class AddNewPlayers extends React.Component {
       <div className="row">
         <div className="col-lg-6 addNewPlayerRow">
           <div className="input-group">
-            <input type="text" className="form-control" onChange={this.handleChange} placeholder="Search for..." />
+            <input type="text" className="form-control" onChange={this.handleChange} placeholder="Email Address" />
             <span className="input-group-btn">
-              <button className="btn btn-default" onClick={this.sendInvite} type="button">Go!</button>
+              <button className="btn btn-default" onClick={this.sendInvite} type="button">Reach out!</button>
             </span>
           </div>
         </div>
