@@ -15,20 +15,23 @@ main {
     min-height: 10vh;
     padding: 10px;
     width: 100vw;
-    img {
-      border-radius: 50%;
-      height: 7vh;
-      margin-bottom: 10px;
-      float: right !important;
-    }
     span {
         font-size: 5vh;
         text-decoration: none;
         margin-left: 5vw;
     }
-    span:hover {
-        text-decoration: underline !important
-    }
+    // span:hover {
+    //     text-decoration: underline !important
+    // }
+}
+
+.fade
+{
+        opacity:0.6;
+}
+.fade:hover
+{
+        opacity:1;
 }
 
 #subMenu {
@@ -45,9 +48,9 @@ main {
         padding-left: 30px;
         text-decoration: none;
     }
-    span:hover {
-        text-decoration: underline !important
-    }
+    // span:hover {
+    //     color: white;
+    // }
 }
 
 .topPadding {
@@ -163,8 +166,17 @@ form {
     padding-right: 50px;
 }
 
+.newshowMargin {
+  margin-top: 20px;
+  height: 100px;
+}
+
+.newshowHeight {
+  height: 500px;
+}
+
 // .columnFlex {
-//   width: 25%;
+//   height: 300px;
 // }
 
 .divflexcolumn {
@@ -232,7 +244,8 @@ form {
 }
 
 #addNewShowPart1 {
-  margin-left: 5vw;
+  margin-left: 2.5vw;
+  margin-bottom: 20px;
 }
 
 // #gameDescription {
@@ -295,6 +308,10 @@ form {
   height: 800px;
   padding-top: 20px;
   margin-left: -100px;
+}
+
+#signUpTeamButton {
+  margin: 20px;
 }
 
 @media screen and (max-width: 768px) {
