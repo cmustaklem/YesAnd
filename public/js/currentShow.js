@@ -18,7 +18,7 @@ fetch('/api/v1/shows/' + showID, {
 .then(function(show){
     // console.log(show)
     var cast = show.users.map(function(user) {
-        return '<p>' + user.first_name + ' ' + user.last_name + '</p>'
+        return '<h6>' + '<p>' + user.first_name + ' ' + user.last_name + '</p>' + '</h6>'
     })
     console.log(cast)
     show.games.forEach(function(game) {
@@ -58,7 +58,7 @@ fetch('/api/v1/shows/' + showID, {
 
         var contentitems = document.createElement('div')
         contentitems.className = 'panel-body'
-        contentitems.innerHTML = '<p>' + game.description + '</p>' + '<p>' + game.suggestion + '</p>' + cast.join('')
+        contentitems.innerHTML = '<p>' + '<h3>' + 'Description-' + ' ' + game.description + '</h3>' + '</p>' + '<p>' + '<h4>' + 'Suggestion-' + ' ' + game.suggestion + '</h4>' + '</p>' + '<p>' + '<h5>' + 'The Cast' + '</h5>' + '</p>' + cast.join('')
         content.appendChild(contentitems)
         col.appendChild(content)
 

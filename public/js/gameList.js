@@ -43,7 +43,7 @@ fetch('/api/v1/games', {
 
         var contentitems = document.createElement('div')
         contentitems.className = 'panel-body'
-        contentitems.innerHTML = '<p>' + 'Description:' + ' ' + item.description + '</p>' + '<p>' + 'Suggesion:' + ' ' + item.suggestion + '</p>'
+        contentitems.innerHTML = '<p>' + 'Description:' + ' ' + item.description + '</p>' + '<p>' + 'Suggestion:' + ' ' + item.suggestion + '</p>'
         content.appendChild(contentitems)
         col.appendChild(content)
 
