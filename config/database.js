@@ -14,7 +14,7 @@ module.exports = {
   | interacting with SQL databases.
   |
   */
-  connection: Env.get('DB_CONNECTION', 'pg'),
+  connection: Env.get('pg'),
 
   /*
   |--------------------------------------------------------------------------
@@ -27,13 +27,13 @@ module.exports = {
   | npm i --save sqlite3
   |
   */
-  sqlite: {
-    client: 'sqlite3',
-    connection: {
-      filename: Helpers.databasePath('development.sqlite')
-    },
-    useNullAsDefault: true
-  },
+  // sqlite: {
+  //   client: 'sqlite3',
+  //   connection: {
+  //     filename: Helpers.databasePath('development.sqlite')
+  //   },
+  //   useNullAsDefault: true
+  // },
 
   /*
   |--------------------------------------------------------------------------
@@ -45,15 +45,15 @@ module.exports = {
   | npm i --save mysql
   |
   */
-  mysql: {
-    client: 'mysql',
-    connection: {
-      host: Env.get('DB_HOST', 'localhost'),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
-    }
-  },
+  // mysql: {
+  //   client: 'mysql',
+  //   connection: {
+  //     host: Env.get('DB_HOST', 'localhost'),
+  //     user: Env.get('DB_USER', 'root'),
+  //     password: Env.get('DB_PASSWORD', ''),
+  //     database: Env.get('DB_DATABASE', 'adonis')
+  //   }
+  // },
 
   /*
   |--------------------------------------------------------------------------
@@ -65,14 +65,22 @@ module.exports = {
   | npm i --save pg
   |
   */
-  pg: {
-    client: 'pg',
-    connection: {
-      host: Env.get('DB_HOST', 'localhost'),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
-    }
-  }
+//   pg: {
+//   client: 'pg',
+//   connection: {
+//     host: '127.0.0.1',
+//     port: 5432,
+//     user: '',
+//     password: '',
+//     database: 'adonis',
+//     ssl: false
+//   }
+// }
+
+pg: {
+  client: 'pg',
+  connection: Env.get('DATABASE_URL')
+
+}
 
 }
