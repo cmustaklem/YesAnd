@@ -28,7 +28,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.11.1",
-    "pg": "^6.1.0",
+    "pg": "6.1.2",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-localstorage": "^0.3.0",
