@@ -39,7 +39,7 @@ function postNewUserInfo() {
         })
         .then(function(response) {
             if (response !== false) {
-                window.location.href = '/playerhome'
+                window.location.href = '/home'
             }
         })
     }
