@@ -70,7 +70,7 @@ Route.group('authenticated', function() {
   })
 
   Route.get('/newshowgames/:id', function * (request, response) {
-    yield response.sendView('newshow2', {showId: request.param('id')})
+    yield response.sendView('newShow2', {showId: request.param('id')})
   })
 
   Route.get('/shows', function * (request, response) {
